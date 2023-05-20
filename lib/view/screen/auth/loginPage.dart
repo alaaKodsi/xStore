@@ -51,6 +51,7 @@ class LoginPage extends StatelessWidget {
                     return validInput(val!, "email", 7, 30);
                   },
                   hint: "Enter your Email",
+                  keyboardType: TextInputType.emailAddress,
                   label: "Email",
                   icon: Icons.email_outlined,
                 ),
@@ -62,7 +63,6 @@ class LoginPage extends StatelessWidget {
                       return validInput(val!, "password", 7, 30);
                     },
                     hint: "Enter your Password",
-                    keyboardType: TextInputType.emailAddress,
                     label: "Password",
                     icon: Icons.lock_outline,
                   ),
@@ -98,12 +98,15 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                CoustomCheekAccount(
-                  bodyText: " I don't have an account yet ! ",
-                  inkweText: "SignUp",
-                  onTap: () {
-                    controller.goToSignUp();
-                  },
+                SizedBox(
+                  height: Get.height / 8,
+                  child: CoustomCheekAccount(
+                    bodyText: " I don't have an account yet ! ",
+                    inkweText: "SignUp",
+                    onTap: () {
+                      controller.goToSignUp();
+                    },
+                  ),
                 ),
               ],
             ),

@@ -27,41 +27,44 @@ class ResetPassword extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(bottom: 30),
-              child: Center(
-                child: Text(
-                  "Enter a new Password ",
-                  style: TextStyle(color: Colors.white, fontSize: 30),
+        child: Form(
+          key: controller.formstate,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(bottom: 30),
+                child: Center(
+                  child: Text(
+                    "Enter a new Password ",
+                    style: TextStyle(color: Colors.white, fontSize: 30),
+                  ),
                 ),
               ),
-            ),
-            CustomTextFormField(
-                validator: (val) {
-                  return validInput(val!, "Password", 3, 30);
-                },
-                label: "Password",
-                hint: "New Password",
-                icon: Icons.lock_open),
-            CustomTextFormField(
-                validator: (val) {
-                  return validInput(val!, "Password", 3, 30);
-                },
-                label: "Password",
-                hint: "Confirm Password",
-                icon: Icons.lock_reset_outlined),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: CustomElevatedButton(
-                  text: "Save",
-                  onPressed: () {
-                    controller.goLogin();
-                  }),
-            )
-          ],
+              CustomTextFormField(
+                  validator: (val) {
+                    return validInput(val!, "Password", 3, 30);
+                  },
+                  label: "Password",
+                  hint: "New Password",
+                  icon: Icons.lock_open),
+              CustomTextFormField(
+                  validator: (val) {
+                    return validInput(val!, "Password", 3, 30);
+                  },
+                  label: "Password",
+                  hint: "Confirm Password",
+                  icon: Icons.lock_reset_outlined),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: CustomElevatedButton(
+                    text: "Save",
+                    onPressed: () {
+                      controller.goLogin();
+                    }),
+              )
+            ],
+          ),
         ),
       ),
     );

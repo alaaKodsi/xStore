@@ -12,7 +12,7 @@ Map<String, Widget Function(BuildContext)> route = {
   "/": (context) => const OnboardingPage(),
   "signUp": (context) => const SignUpPage(),
   "forgetPassword": (context) => const FotgetPasswordPage(),
-  "VerfiyCode": (context) => const VerfiyCode(),
+  "verfiyCode": (context) => const VerfiyCode(),
   "resetPassword": (context) => const ResetPassword(),
   "checkEmail": (context) => const CheckEmail(),
 };

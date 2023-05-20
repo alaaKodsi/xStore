@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import '../../../controller/auth/verificationController.dart';
 import '../../../core/constant/color.dart';
@@ -32,9 +33,25 @@ class VerfiyCode extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
           ),
-          CustomOtpText(
-            onSubmit: controller.goToResetPassword(),
-          ),
+          OtpTextField(
+            fieldWidth: 50.0,
+            borderRadius: BorderRadius.circular(20),
+            numberOfFields: 5,
+            borderColor: const Color(0xFF512DA8),
+            //set to true to show as box or false to show as dash
+            showFieldAsBox: true,
+            //runs when a code is typed in
+            onCodeChanged: (String code) {
+              //handle validation or checks here
+            },
+            //runs when every textfield is filled
+            onSubmit: (String verificationCode) {
+              controller.goToResetPassword();
+            },
+          )
+          // CustomOtpText(
+          //   onSubmit: controller.goToResetPassword(),
+          // ),
         ],
       ),
     );

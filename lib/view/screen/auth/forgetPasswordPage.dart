@@ -5,7 +5,6 @@ import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
 import 'package:xstore/view/widget/auth/customElevatedButton.dart';
 import 'package:xstore/view/widget/auth/customTextFormField.dart';
-
 import '../../../core/constant/color.dart';
 
 class FotgetPasswordPage extends StatelessWidget {
@@ -37,6 +36,7 @@ class FotgetPasswordPage extends StatelessWidget {
                 Image.asset(ImageApp.forgotPassword),
                 // Text(),
                 CustomTextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     validator: (val) {
                       return validInput(val!, "email", 7, 30);
                     },

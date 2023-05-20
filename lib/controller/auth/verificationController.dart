@@ -12,7 +12,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
   checkCode() {}
 
   @override
-  goToResetPassword() {
+  goToResetPassword() async {
     Get.offNamed("resetPassword");
   }
 

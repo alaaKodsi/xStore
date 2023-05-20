@@ -12,19 +12,17 @@ class ForgotPasswordControllerImp extends ForgotPassword {
 
   @override
   goToVerifyCode() {
-    Get.toNamed("VerfiyCode");
-  }
-
-  @override
-  cheekEmail() {
     var formData = formstat.currentState;
     if (formData!.validate()) {
-      Get.delete();
-      return "valid";
+      Get.offNamed("verfiyCode");
+      Get.delete<ForgotPasswordControllerImp>();
     } else {
       return "not vaild ";
     }
   }
+
+  @override
+  cheekEmail() {}
 
   @override
   void onInit() {

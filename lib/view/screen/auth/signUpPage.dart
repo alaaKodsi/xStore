@@ -99,13 +99,13 @@ class SignUpPage extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Center(
+                SizedBox(
+                  height: Get.height / 3.5,
                   child: CoustomCheekAccount(
                     bodyText: " I have an account already !  ",
                     inkweText: "Login",
                     onTap: () {
                       controller.goToLogin();
-                      ;
                     },
                   ),
                 ),
