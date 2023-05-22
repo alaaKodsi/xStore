@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/routes.dart';
+import 'package:xstore/view/screen/onboardingPage.dart';
 import 'core/constant/color.dart';
 import 'core/localization/changeLocal.dart';
 import 'core/localization/transliation.dart';
@@ -26,9 +27,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primryColor),
         useMaterial3: true,
       ),
-      initialRoute: "/",
-      routes: route,
       locale: controller.language,
+      getPages: routes,
+      // initialRoute: "/onboarding"
       translations: MyTranslation(),
     );
   }

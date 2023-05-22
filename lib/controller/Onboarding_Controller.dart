@@ -17,6 +17,7 @@ class OnboardingControllerImp extends OnboardingController {
   next() {
     currentPage++;
     if (currentPage > onboardingList.length - 1) {
+      myservices.sharedPreferences.setBool("onboarding", true);
       Get.offAllNamed("Login");
     } else {
       pageController.animateToPage(currentPage,

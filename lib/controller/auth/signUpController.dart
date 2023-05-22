@@ -24,7 +24,6 @@ class SignUpControllerImp extends SignUpController {
   signUp() {
     var formData = formstat.currentState;
     if (formData!.validate()) {
-      Get.delete<SignUpControllerImp>();
       return "valid";
     } else {
       return "not vaild ";
