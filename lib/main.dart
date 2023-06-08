@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/routes.dart';
-import 'package:xstore/view/screen/onboardingPage.dart';
 import 'core/constant/color.dart';
 import 'core/localization/changeLocal.dart';
 import 'core/localization/transliation.dart';
