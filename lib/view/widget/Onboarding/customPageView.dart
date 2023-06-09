@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/Onboarding_Controller.dart';
-import 'package:xstore/data/datasource/static/static.dart';
+import 'package:xstore/data/datasource/static/staticOnboarding.dart';
 
 class CustomPageView extends GetView<OnboardingControllerImp> {
   const CustomPageView({super.key});

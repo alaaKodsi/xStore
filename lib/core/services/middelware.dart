@@ -6,6 +6,7 @@ class MyMiddelware extends GetMiddleware {
   Myservices myservices = Get.find();
 
   @override
+  // priority 1 is high
   int? get priority => 1;
 
   @override
