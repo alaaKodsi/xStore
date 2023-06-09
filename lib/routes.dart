@@ -19,14 +19,3 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/resetPassword", page: () => const ResetPassword()),
   GetPage(name: "/checkEmail", page: () => const CheckEmail()),
 ];
-
-
-// Map<String, Widget Function(BuildContext)> route = {
-//   "Login": (context) => const LoginPage(),
-//   "/": (context) => const OnboardingPage(),
-//   "signUp": (context) => const SignUpPage(),
-//   "forgetPassword": (context) => const FotgetPasswordPage(),
-//   "verfiyCode": (context) => const VerfiyCode(),
-//   "resetPassword": (context) => const ResetPassword(),
-//   "checkEmail": (context) => const CheckEmail(),
-// };

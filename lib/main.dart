@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LocalController controller = Get.put(LocalController());
-
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -28,7 +27,6 @@ class MyApp extends StatelessWidget {
       ),
       locale: controller.language,
       getPages: routes,
-      // initialRoute: "/onboarding"
       translations: MyTranslation(),
     );
   }

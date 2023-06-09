@@ -10,8 +10,4 @@ class VerfiySignUpControllermp extends VerfiySignUpController {
     Get.toNamed("Login");
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

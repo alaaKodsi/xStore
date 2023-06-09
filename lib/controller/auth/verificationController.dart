@@ -16,8 +16,4 @@ class VerifyCodeControllerImp extends VerifyCodeController {
     Get.offNamed("resetPassword");
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

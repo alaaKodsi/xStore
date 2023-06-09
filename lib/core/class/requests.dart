@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../functions/checkInternet.dart';
 import 'StatusRequest.dart';
 
-class Requests {
+class RequestsFromApi {
   Future<Either<StatusRequest, Map>> postData(String linkurl, Map data) async {
     try {
       if (await checkInternetConnection()) {

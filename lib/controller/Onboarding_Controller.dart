@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/services/local.dart';
-import 'package:xstore/data/datasource/static/static.dart';
+import 'package:xstore/data/datasource/static/staticOnboarding.dart';
 
 abstract class OnboardingController extends GetxController {
   next();
@@ -11,8 +11,8 @@ abstract class OnboardingController extends GetxController {
 class OnboardingControllerImp extends OnboardingController {
   late PageController pageController;
   int currentPage = 0;
-
   Myservices myservices = Get.find();
+
   @override
   next() {
     currentPage++;
