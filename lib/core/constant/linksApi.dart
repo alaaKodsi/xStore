@@ -1,6 +1,6 @@
 class LinkApi {
-  static final String root = "http://localhost/xstore";
+  static const String root = "http://192.168.1.110/xstore";
 
   //Auth
-  static final String signup = "$root/auth/signup.Php";
+  static const String signup = "$root/auth/signup.Php";
 }

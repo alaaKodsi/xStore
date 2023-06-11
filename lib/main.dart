@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:xstore/core/class/initialBindings.dart';
 import 'package:xstore/routes.dart';
 import 'core/constant/color.dart';
 import 'core/localization/changeLocal.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       locale: controller.language,
       getPages: routes,
+      initialBinding: InitialBindings(),
       translations: MyTranslation(),
     );
   }

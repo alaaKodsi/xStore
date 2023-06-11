@@ -12,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   TextInputType? keyboardType;
   String? Function(String?)? validator;
   bool? obscureText;
+  TextEditingController? controller;
   void Function()? onTap;
 
   CustomTextFormField({
@@ -19,6 +20,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.label,
     required this.hint,
     required this.icon,
+    this.controller,
     this.keyboardType,
     this.validator,
     this.obscureText,
@@ -30,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextFormField(
+          controller: controller,
           validator: validator,
           keyboardType: keyboardType,
           obscureText:

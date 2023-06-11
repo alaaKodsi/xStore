@@ -13,6 +13,7 @@ class Signupdata {
       "phone": phone,
       "passwword": password,
     });
+
     return response.fold((l) => l, (r) => r);
   }
 }

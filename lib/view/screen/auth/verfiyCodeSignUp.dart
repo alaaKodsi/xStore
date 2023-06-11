@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/auth/verfiyCodeSignUpController.dart';
+import 'package:lottie/lottie.dart';
+import 'package:xstore/controller/auth/verfiyCodeSignUpController.dart';
+import 'package:xstore/core/constant/imageApp.dart';
+
 import '../../../core/constant/color.dart';
 import '../../widget/auth/customOtpText.dart';
 
@@ -9,8 +12,7 @@ class VerfiyCodeSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerfiySignUpController controller =
-        Get.put(VerfiySignUpController as VerfiySignUpController);
+    VerifiySignUpControllermp controller = Get.put(VerifiySignUpControllermp());
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -26,6 +28,7 @@ class VerfiyCodeSignUp extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Lottie.asset(ImageApp.verifycode, width: 250, height: 250),
           const Padding(
             padding: EdgeInsets.all(20),
             child: Text(

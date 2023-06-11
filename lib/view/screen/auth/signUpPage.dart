@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/constant/color.dart';
@@ -50,6 +48,7 @@ class SignUpPage extends StatelessWidget {
                   height: 25,
                 ),
                 CustomTextFormField(
+                  controller: controller.username,
                   validator: (val) {
                     return validInput(val!, "username", 9, 30);
                   },
@@ -58,6 +57,7 @@ class SignUpPage extends StatelessWidget {
                   icon: Icons.person_2_outlined,
                 ),
                 CustomTextFormField(
+                  controller: controller.email,
                   validator: (val) {
                     return validInput(val!, "email", 10, 30);
                   },
@@ -67,6 +67,7 @@ class SignUpPage extends StatelessWidget {
                   icon: Icons.email_outlined,
                 ),
                 CustomTextFormField(
+                  controller: controller.phone,
                   validator: (val) {
                     return validInput(val!, "Phone", 9, 15);
                   },
@@ -80,6 +81,7 @@ class SignUpPage extends StatelessWidget {
                     obscureText: controller.isShowPassword,
                     onTap: controller.showPassword(),
                     hint: "Enter your Password",
+                    controller: controller.password,
                     validator: (val) {
                       return validInput(val!, "Password", 10, 25);
                     },

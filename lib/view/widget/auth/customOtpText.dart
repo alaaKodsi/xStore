@@ -18,6 +18,13 @@ class CustomOtpText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OtpTextField(
+      enabledBorderColor: primryColor,
+
+      decoration: const InputDecoration(
+          counterStyle:
+              TextStyle(color: Colors.white, decorationColor: Colors.white)),
+
+      fillColor: Colors.white,
       margin: const EdgeInsets.all(7),
       focusedBorderColor: primryColor,
       textStyle: const TextStyle(color: Colors.white),

@@ -13,10 +13,11 @@ abstract class SignUpController extends GetxController {
 class SignUpControllerImp extends SignUpController {
   GlobalKey<FormState> formstat = GlobalKey<FormState>();
 
+  late TextEditingController username;
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController phone;
-  late TextEditingController username;
+
   bool isShowPassword = true;
   late StatusRequest statusRequest;
   Signupdata signupdata = Signupdata(Get.find());
@@ -28,32 +29,32 @@ class SignUpControllerImp extends SignUpController {
   }
 
   @override
+  void onInit() {
+    username = TextEditingController();
+    email = TextEditingController();
+    password = TextEditingController();
+    phone = TextEditingController();
+    super.onInit();
+  }
+
+  @override
   signUp() async {
     var formData = formstat.currentState;
     if (formData!.validate()) {
       statusRequest = StatusRequest.loading;
       var response = await signupdata.postData(
-          username.text, password.text, email.text, phone.text);
+          username.text, email.text, phone.text, password.text);
+      print("=============================== Controller $response ");
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          Get.offAllNamed("/verfiyCode");
+          Get.offNamed("VerfiyCode");
         } else {
           Get.defaultDialog(
-              title: "ُWarning",
-              middleText: "Phone Number Or Email Already Exists");
+              title: "ُWarning", middleText: " Email Already Exists");
           statusRequest = StatusRequest.failure;
         }
       }
-    }
-
-    @override
-    void onInit() {
-      email = TextEditingController();
-      password = TextEditingController();
-      username = TextEditingController();
-      phone = TextEditingController();
-      super.onInit();
     }
 
     @override
