@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
 import 'package:xstore/core/functions/handlingData.dart';
@@ -48,10 +49,12 @@ class SignUpControllerImp extends SignUpController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          Get.offNamed("VerfiyCode");
+          SchedulerBinding.instance.addPostFrameCallback((_) {
+            Get.offAllNamed("VerfiyCodeSignUp");
+          });
         } else {
           Get.defaultDialog(
-              title: "ُWarning", middleText: " Email Already Exists");
+              title: "ُWarning", middleText: "Email Already Exists");
           statusRequest = StatusRequest.failure;
         }
       }

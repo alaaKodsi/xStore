@@ -93,8 +93,8 @@ class SignUpPage extends StatelessWidget {
                   height: 25,
                 ),
                 CustomElevatedButton(
-                  onPressed: () {
-                    controller.signUp();
+                  onPressed: () async {
+                    await controller.signUp();
                   },
                   text: "Sign up ",
                 ),

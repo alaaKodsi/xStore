@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import 'package:xstore/core/constant/imageApp.dart';
 import '../../../controller/auth/verificationController.dart';
 import '../../../core/constant/color.dart';
 
@@ -25,6 +27,8 @@ class VerfiyCode extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Lottie.asset(ImageApp.verifycode, width: 250, height: 250),
+
           const Padding(
             padding: EdgeInsets.all(20),
             child: Text(
@@ -36,14 +40,13 @@ class VerfiyCode extends StatelessWidget {
             fieldWidth: 50.0,
             borderRadius: BorderRadius.circular(20),
             numberOfFields: 5,
-            borderColor: const Color(0xFF512DA8),
-            //set to true to show as box or false to show as dash
+            showCursor: false,
+            textStyle: const TextStyle(color: Colors.white),
+            focusedBorderColor: primryColor,
+            enabledBorderColor: Colors.white,
+            fillColor: Colors.white,
             showFieldAsBox: true,
-            //runs when a code is typed in
-            onCodeChanged: (String code) {
-              //handle validation or checks here
-            },
-            //runs when every textfield is filled
+            onCodeChanged: (String code) {},
             onSubmit: (String verificationCode) {
               controller.goToResetPassword();
             },
