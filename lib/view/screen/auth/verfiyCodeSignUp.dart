@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:xstore/controller/auth/verfiyCodeSignUpController.dart';
 import 'package:xstore/core/constant/imageApp.dart';
-
 import '../../../core/constant/color.dart';
-import '../../widget/auth/customOtpText.dart';
 
 class VerfiyCodeSignUp extends StatelessWidget {
   const VerfiyCodeSignUp({super.key});
@@ -36,8 +35,20 @@ class VerfiyCodeSignUp extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 30),
             ),
           ),
-          CustomOtpText(
-            onSubmit: controller.goToLogin(),
+          OtpTextField(
+            fieldWidth: 50.0,
+            borderRadius: BorderRadius.circular(20),
+            numberOfFields: 5,
+            showCursor: false,
+            textStyle: const TextStyle(color: Colors.white),
+            focusedBorderColor: primryColor,
+            enabledBorderColor: Colors.white,
+            fillColor: Colors.white,
+            showFieldAsBox: true,
+            onCodeChanged: (String code) {},
+            onSubmit: (String verificationCode) {
+              controller.goToLogin();
+            },
           ),
         ],
       ),
