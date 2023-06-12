@@ -20,7 +20,7 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController phone;
 
   bool isShowPassword = true;
-  late StatusRequest statusRequest;
+  StatusRequest? statusRequest;
   Signupdata signupdata = Signupdata(Get.find());
   List data = [];
 
@@ -43,15 +43,17 @@ class SignUpControllerImp extends SignUpController {
     var formData = formstat.currentState;
     if (formData!.validate()) {
       statusRequest = StatusRequest.loading;
+      update();
       var response = await signupdata.postData(
           username.text, email.text, phone.text, password.text);
-      print("=============================== Controller $response ");
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           SchedulerBinding.instance.addPostFrameCallback((_) {
-            Get.offAllNamed("VerfiyCodeSignUp");
+            Get.offAllNamed("VerfiyCodeSignUp",
+                arguments: {"email": email.text});
           });
+          update();
         } else {
           Get.defaultDialog(
               title: "ُWarning", middleText: "Email Already Exists");

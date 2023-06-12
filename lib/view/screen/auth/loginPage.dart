@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:xstore/controller/auth/loginContorller.dart';
-import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/functions/exitApp.dart';
