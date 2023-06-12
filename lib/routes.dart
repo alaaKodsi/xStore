@@ -3,6 +3,7 @@ import 'package:xstore/core/services/middelware.dart';
 import 'package:xstore/view/screen/auth/loginPage.dart';
 import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
+import 'package:xstore/view/screen/home/homePage.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
 import 'view/screen/auth/checkEmail.dart';
 import 'view/screen/auth/forgetPasswordPage.dart';
@@ -13,6 +14,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/", page: () => const OnboardingPage(), middlewares: [
     MyMiddelware(),
   ]),
+
+  // Auth
+
   GetPage(name: "/Login", page: () => const LoginPage()),
   GetPage(name: "/signUp", page: () => const SignUpPage()),
   GetPage(name: "/forgetPassword", page: () => const FotgetPasswordPage()),
@@ -20,4 +24,7 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/VerfiyCodeSignUp", page: () => const VerfiyCodeSignUp()),
   GetPage(name: "/resetPassword", page: () => const ResetPassword()),
   GetPage(name: "/checkEmail", page: () => const CheckEmail()),
+
+  /// home
+  GetPage(name: "/home", page: () => const HomePage()),
 ];

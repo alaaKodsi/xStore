@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
+import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/handlingData.dart';
+import 'package:xstore/data/datasource/remotly/auth/login.dart';
 
 abstract class LoginController extends GetxController {
   login();
@@ -10,9 +14,11 @@ abstract class LoginController extends GetxController {
 
 class LoginControllerImp extends LoginController {
   GlobalKey<FormState> formstat = GlobalKey<FormState>();
+  LoginData loginData = LoginData(Get.find());
   late TextEditingController email;
   late TextEditingController password;
   bool isShowPassword = true;
+  StatusRequest? statusRequest;
 
   @override
   goToSignUp() {
@@ -20,13 +26,26 @@ class LoginControllerImp extends LoginController {
   }
 
   @override
-  login() {
+  login() async {
     var formData = formstat.currentState;
     if (formData!.validate()) {
-      Get.delete();
-      return "valid";
-    } else {
-      return "not vaild ";
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await loginData.postData(email.text, password.text);
+      statusRequest = handlingData(response);
+      if (StatusRequest.success == statusRequest) {
+        if (response['status'] == "success") {
+          SchedulerBinding.instance.addPostFrameCallback((_) {
+            Get.offAllNamed("home");
+          });
+          update();
+        } else {
+          Get.defaultDialog(
+              title: "ُWarning",
+              middleText: "Email or Password is Wrong Please try anain");
+          statusRequest = StatusRequest.failure;
+        }
+      }
     }
   }
 
