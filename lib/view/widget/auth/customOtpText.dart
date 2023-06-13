@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/auth/verificationController.dart';
+import 'package:xstore/controller/auth/verifyCodeResetPasswordController.dart';
 import 'package:xstore/core/constant/color.dart';
 
 // ignore: must_be_immutable

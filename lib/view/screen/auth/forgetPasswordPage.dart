@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/auth/forgotPassword.dart';
+import 'package:xstore/controller/auth/checkEmail.dart';
 import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
 import 'package:xstore/view/widget/auth/customElevatedButton.dart';
@@ -12,8 +12,7 @@ class FotgetPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgotPasswordControllerImp controller =
-        Get.put(ForgotPasswordControllerImp());
+    CheckEmailControllerImp controller = Get.put(CheckEmailControllerImp());
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
