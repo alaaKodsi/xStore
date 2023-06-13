@@ -21,6 +21,8 @@ class VerifyCodeControllerImp extends VerifyCodeController {
     var response =
         await verfiyCodeForgotpasswordData.postData(email!, verifycode);
     statusRequest = handlingData(response);
+    update();
+
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         SchedulerBinding.instance.addPostFrameCallback((_) {

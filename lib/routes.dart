@@ -5,7 +5,6 @@ import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homePage.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
-import 'view/screen/auth/checkEmail.dart';
 import 'view/screen/auth/forgetPasswordPage.dart';
 import 'view/screen/auth/resetPassword.dart';
 import 'view/screen/auth/verfiyCode.dart';
@@ -23,7 +22,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/verfiyCode", page: () => const VerfiyCode()),
   GetPage(name: "/VerfiyCodeSignUp", page: () => const VerfiyCodeSignUp()),
   GetPage(name: "/resetPassword", page: () => const ResetPassword()),
-  GetPage(name: "/checkEmail", page: () => const CheckEmail()),
 
   /// home
   GetPage(name: "/home", page: () => const HomePage()),

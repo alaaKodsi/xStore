@@ -53,6 +53,7 @@ class LoginPage extends StatelessWidget {
                                 height: 25,
                               ),
                               CustomTextFormField(
+                                controller: controller.email,
                                 validator: (val) {
                                   return validInput(val!, "email", 7, 30);
                                 },
@@ -62,6 +63,7 @@ class LoginPage extends StatelessWidget {
                                 icon: Icons.email_outlined,
                               ),
                               CustomTextFormField(
+                                controller: controller.password,
                                 obscureText: controller.isShowPassword,
                                 onTap: controller.showPassword(),
                                 validator: (val) {

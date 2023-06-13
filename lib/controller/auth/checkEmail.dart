@@ -7,6 +7,7 @@ import 'package:xstore/data/datasource/remotly/forgotPasword/checkEmail.dart';
 
 abstract class CheckEmailController extends GetxController {
   goToVerifyCode();
+  goToSamePage();
 }
 
 class CheckEmailControllerImp extends CheckEmailController {
@@ -14,6 +15,7 @@ class CheckEmailControllerImp extends CheckEmailController {
   GlobalKey<FormState> formstat = GlobalKey<FormState>();
   CheckEmailData checkEmailData = CheckEmailData(Get.find());
   StatusRequest? statusRequest;
+
   @override
   goToVerifyCode() async {
     var formData = formstat.currentState;
@@ -23,6 +25,7 @@ class CheckEmailControllerImp extends CheckEmailController {
       var response = await checkEmailData.postData(
         email.text,
       );
+      update();
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
@@ -41,7 +44,6 @@ class CheckEmailControllerImp extends CheckEmailController {
   @override
   void onInit() {
     email = TextEditingController();
-
     super.onInit();
   }
 
@@ -49,5 +51,11 @@ class CheckEmailControllerImp extends CheckEmailController {
   void dispose() {
     email.dispose();
     super.dispose();
+  }
+
+  @override
+  goToSamePage() {
+    Get.offNamed("FotgetPasswordPage");
+    update();
   }
 }

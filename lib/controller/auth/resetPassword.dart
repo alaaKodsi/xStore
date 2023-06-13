@@ -19,12 +19,14 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   @override
   goLogin() async {
-    if (password != repassword) {
+    if (password.text != repassword.text) {
       Get.defaultDialog(title: "ُWarning", middleText: "Not match password");
     } else if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
       update();
       var response = await resetPasswordData.postData(email!, password.text);
+      update();
+
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
