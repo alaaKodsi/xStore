@@ -1,31 +1,48 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
+import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/handlingData.dart';
+import 'package:xstore/data/datasource/remotly/forgotPasword/resetPassword.dart';
 
 abstract class ResetPasswordController extends GetxController {
   goLogin();
-  resetPassword();
 }
 
 class ResetPasswordControllerImp extends ResetPasswordController {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController password;
   late TextEditingController repassword;
+  String? email;
+  StatusRequest? statusRequest;
+  ResetPasswordData resetPasswordData = ResetPasswordData(Get.find());
 
   @override
-  resetPassword() {}
-
-  @override
-  goLogin() {
-    if (formstate.currentState!.validate()) {
-      Get.offAllNamed("Login");
-    } else {
-      print("Not Valid");
+  goLogin() async {
+    if (password != repassword) {
+      Get.defaultDialog(title: "ُWarning", middleText: "Not match password");
+    } else if (formstate.currentState!.validate()) {
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await resetPasswordData.postData(email!, password.text);
+      statusRequest = handlingData(response);
+      if (StatusRequest.success == statusRequest) {
+        if (response['status'] == "success") {
+          SchedulerBinding.instance.addPostFrameCallback((_) {
+            Get.offAllNamed("Login");
+          });
+          update();
+        } else {
+          Get.defaultDialog(title: "ُWarning", middleText: "Please try again");
+          statusRequest = StatusRequest.failure;
+        }
+      }
     }
-    Get.offAllNamed("Login");
   }
 
   @override
   void onInit() {
+    email = Get.arguments['email'];
     password = TextEditingController();
     repassword = TextEditingController();
 

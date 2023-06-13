@@ -3,7 +3,7 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:xstore/core/constant/imageApp.dart';
-import '../../../controller/auth/verificationController.dart';
+import '../../../controller/auth/verifyCodeResetPasswordController.dart';
 import '../../../core/constant/color.dart';
 
 class VerfiyCode extends StatelessWidget {
@@ -48,7 +48,7 @@ class VerfiyCode extends StatelessWidget {
             showFieldAsBox: true,
             onCodeChanged: (String code) {},
             onSubmit: (String verificationCode) {
-              controller.goToResetPassword();
+              controller.goToResetPassword(verificationCode);
             },
           )
           // CustomOtpText(

@@ -10,6 +10,7 @@ class Loading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
+      appBar: AppBar(backgroundColor: Colors.transparent),
       body: Center(
           child: Lottie.asset(ImageApp.loading, width: 250, height: 250)),
     );

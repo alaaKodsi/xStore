@@ -5,4 +5,12 @@ class LinkApi {
   static const String signup = "$root/auth/signup.Php";
   static const String verifyCode = "$root/auth/verifiycode.Php";
   static const String login = "$root/auth/login.Php";
+
+  //fogot password and reset password
+
+  static const String verifyCodeToRessePass =
+      "$root/forgotpassword/verifyCode.Php";
+
+  static const String resetPassword = "$root/forgotpassword/resetPassword.Php";
+  static const String checkEmail = "$root/forgotpassword/checkEmail.Php";
 }
