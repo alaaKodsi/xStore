@@ -4,6 +4,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
 import 'package:xstore/core/functions/handlingData.dart';
+import 'package:xstore/core/services/local.dart';
 import 'package:xstore/data/datasource/remotly/auth/login.dart';
 
 abstract class LoginController extends GetxController {
@@ -19,7 +20,8 @@ class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
   bool isShowPassword = true;
-  StatusRequest? statusRequest;
+  Myservices myservices = Get.find();
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   goToSignUp() {
@@ -36,6 +38,16 @@ class LoginControllerImp extends LoginController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
+          myservices.sharedPreferences
+              .setString('id', response['data']['users_id']);
+          myservices.sharedPreferences
+              .setString('email', response['data']['users_email']);
+          myservices.sharedPreferences
+              .setString('username', response['data']['users_name']);
+          myservices.sharedPreferences
+              .setString('phone', response['data']['users_phone']);
+          myservices.sharedPreferences.setBool("islogin", true);
+
           SchedulerBinding.instance.addPostFrameCallback((_) {
             Get.offAllNamed("home");
           });
@@ -52,9 +64,9 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
-    FirebaseMessaging.instance.getToken().then((value) {
-      print(value);
-    });
+    // FirebaseMessaging.instance.getToken().then((value) {
+    //   print(value);
+    // });
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();
