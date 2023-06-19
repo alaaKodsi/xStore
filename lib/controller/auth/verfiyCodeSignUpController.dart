@@ -1,6 +1,7 @@
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/defaultDialog.dart';
 import 'package:xstore/core/functions/handlingData.dart';
 import 'package:xstore/data/datasource/remotly/auth/verfiyCodeSignup.dart';
 
@@ -12,13 +13,14 @@ VerifyCodeSignUp verifyCodeSignUp = VerifyCodeSignUp(Get.find());
 
 class VerifiySignUpControllermp extends VerifiySignUpController {
   String? email;
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   @override
   goToLogin(verifycodeSignUp) async {
     statusRequest = StatusRequest.loading;
     update();
     var response = await verifyCodeSignUp.postData(email!, verifycodeSignUp);
     statusRequest = handlingData(response);
+    update();
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         SchedulerBinding.instance.addPostFrameCallback((_) {
@@ -26,8 +28,7 @@ class VerifiySignUpControllermp extends VerifiySignUpController {
         });
         update();
       } else {
-        Get.defaultDialog(
-            title: "ُWarning", middleText: "Verify Code not correct");
+        defaultDialog("Verify Code not correct");
         statusRequest = StatusRequest.failure;
       }
     }

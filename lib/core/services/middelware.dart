@@ -11,13 +11,12 @@ class MyMiddelware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    if (myservices.sharedPreferences.getBool("islogin") == true) {
-      return const RouteSettings(name: "home");
-    }
+    // if (myservices.sharedPreferences.getBool("islogin") == true) {
+    //   return const RouteSettings(name: "home");
+    // }
     if (myservices.sharedPreferences.getBool("onboarding") == true) {
       return const RouteSettings(name: "Login");
     }
-
     return null;
   }
 }
