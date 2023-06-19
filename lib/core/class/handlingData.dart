@@ -36,7 +36,6 @@ class HandlingRequest extends StatelessWidget {
   const HandlingRequest(
       {Key? key, required this.statusRequest, required this.widget})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading

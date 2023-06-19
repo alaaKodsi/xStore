@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/defaultDialog.dart';
 import 'package:xstore/core/functions/handlingData.dart';
 import 'package:xstore/data/datasource/remotly/auth/signup.dart';
 
@@ -20,9 +21,8 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController phone;
 
   bool isShowPassword = true;
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   Signupdata signupdata = Signupdata(Get.find());
-  List data = [];
 
   @override
   goToLogin() {
@@ -43,6 +43,7 @@ class SignUpControllerImp extends SignUpController {
     var formData = formstat.currentState;
     if (formData!.validate()) {
       statusRequest = StatusRequest.loading;
+      update();
       var response = await signupdata.postData(
           username.text, email.text, phone.text, password.text);
       statusRequest = handlingData(response);
@@ -54,21 +55,21 @@ class SignUpControllerImp extends SignUpController {
           });
           update();
         } else {
-          Get.defaultDialog(
-              title: "ُWarning", middleText: "Email Already Exists");
+          defaultDialog("Email Already Exists");
           statusRequest = StatusRequest.failure;
         }
       }
+      update();
     }
+  }
 
-    @override
-    void dispose() {
-      email.dispose();
-      username.dispose();
-      phone.dispose();
-      password.dispose();
-      super.dispose();
-    }
+  @override
+  void dispose() {
+    email.dispose();
+    username.dispose();
+    phone.dispose();
+    password.dispose();
+    super.dispose();
   }
 
   @override

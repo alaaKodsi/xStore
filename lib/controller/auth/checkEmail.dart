@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/defaultDialog.dart';
 import 'package:xstore/core/functions/handlingData.dart';
 import 'package:xstore/data/datasource/remotly/forgotPasword/checkEmail.dart';
 
@@ -13,7 +14,8 @@ class CheckEmailControllerImp extends CheckEmailController {
   late TextEditingController email;
   GlobalKey<FormState> formstat = GlobalKey<FormState>();
   CheckEmailData checkEmailData = CheckEmailData(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
+
   @override
   goToVerifyCode() async {
     var formData = formstat.currentState;
@@ -31,10 +33,11 @@ class CheckEmailControllerImp extends CheckEmailController {
           });
           update();
         } else {
-          Get.defaultDialog(title: "ُWarning", middleText: "Email Not Exist");
+          defaultDialog("Email Not Exist");
           statusRequest = StatusRequest.failure;
         }
       }
+      update();
     } else {}
   }
 

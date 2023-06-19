@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:xstore/core/class/StatusRequest.dart';
 
 abstract class CheckEmailController extends GetxController {
   goToLogin();
@@ -7,6 +8,7 @@ abstract class CheckEmailController extends GetxController {
 
 class CheckEmailControllerImp extends CheckEmailController {
   late TextEditingController email;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   goToLogin() {

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/constant/color.dart';
 
+String? middleText;
 // ignore: non_constant_identifier_names
 Future<bool> alertExitApp() {
   Get.defaultDialog(

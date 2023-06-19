@@ -1,8 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-// ignore: file_names
-// ignore: file_names
-// ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:xstore/core/constant/color.dart';
 
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
@@ -40,6 +37,7 @@ class CustomTextFormField extends StatelessWidget {
           style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
             suffixIcon: InkWell(
+              splashColor: backgroundColor,
               onTap: onTap,
               child: Icon(icon),
             ),

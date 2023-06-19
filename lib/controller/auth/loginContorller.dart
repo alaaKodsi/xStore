@@ -1,8 +1,8 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/defaultDialog.dart';
 import 'package:xstore/core/functions/handlingData.dart';
 import 'package:xstore/core/services/local.dart';
 import 'package:xstore/data/datasource/remotly/auth/login.dart';
@@ -39,13 +39,13 @@ class LoginControllerImp extends LoginController {
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           myservices.sharedPreferences
-              .setString('id', response['data']['users_id']);
+              .setString('id', response['data']['users_id'].toString());
           myservices.sharedPreferences
               .setString('email', response['data']['users_email']);
           myservices.sharedPreferences
               .setString('username', response['data']['users_name']);
           myservices.sharedPreferences
-              .setString('phone', response['data']['users_phone']);
+              .setString('phone', response['data']['users_phone'].toString());
           myservices.sharedPreferences.setBool("islogin", true);
 
           SchedulerBinding.instance.addPostFrameCallback((_) {
@@ -53,12 +53,11 @@ class LoginControllerImp extends LoginController {
           });
           update();
         } else {
-          Get.defaultDialog(
-              title: "ُWarning",
-              middleText: "Email or Password is Wrong Please try anain");
+          defaultDialog("Email or Password is Wrong Please try anain");
           statusRequest = StatusRequest.failure;
         }
       }
+      update();
     }
   }
 

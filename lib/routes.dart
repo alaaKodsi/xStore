@@ -18,9 +18,9 @@ List<GetPage<dynamic>>? routes = [
   // Auth
 
   GetPage(
-      name: "/Login",
-      page: () => const LoginPage(),
-      middlewares: [MyMiddelware()]),
+    name: "/Login",
+    page: () => const LoginPage(),
+  ),
   GetPage(name: "/signUp", page: () => const SignUpPage()),
   GetPage(name: "/forgetPassword", page: () => const FotgetPasswordPage()),
   GetPage(name: "/verfiyCode", page: () => const VerfiyCode()),

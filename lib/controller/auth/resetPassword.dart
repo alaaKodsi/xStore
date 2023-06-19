@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/functions/defaultDialog.dart';
 import 'package:xstore/core/functions/handlingData.dart';
 import 'package:xstore/data/datasource/remotly/forgotPasword/resetPassword.dart';
 
@@ -14,12 +15,12 @@ class ResetPasswordControllerImp extends ResetPasswordController {
   late TextEditingController password;
   late TextEditingController repassword;
   String? email;
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   ResetPasswordData resetPasswordData = ResetPasswordData(Get.find());
 
   @override
   goLogin() async {
-    if (password != repassword) {
+    if (password.text != repassword.text) {
       Get.defaultDialog(title: "ُWarning", middleText: "Not match password");
     } else if (formstate.currentState!.validate()) {
       statusRequest = StatusRequest.loading;
@@ -31,12 +32,12 @@ class ResetPasswordControllerImp extends ResetPasswordController {
           SchedulerBinding.instance.addPostFrameCallback((_) {
             Get.offAllNamed("Login");
           });
-          update();
         } else {
-          Get.defaultDialog(title: "ُWarning", middleText: "Please try again");
+          defaultDialog("please try again");
           statusRequest = StatusRequest.failure;
         }
       }
+      update();
     }
   }
 
