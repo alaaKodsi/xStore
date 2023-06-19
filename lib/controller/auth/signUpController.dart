@@ -43,7 +43,6 @@ class SignUpControllerImp extends SignUpController {
     var formData = formstat.currentState;
     if (formData!.validate()) {
       statusRequest = StatusRequest.loading;
-      update();
       var response = await signupdata.postData(
           username.text, email.text, phone.text, password.text);
       statusRequest = handlingData(response);
