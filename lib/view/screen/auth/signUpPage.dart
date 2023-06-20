@@ -4,6 +4,7 @@ import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/functions/exitApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
+import 'package:xstore/view/widget/auth/customTitle.dart';
 import '../../../controller/auth/signUpController.dart';
 import '../../widget/auth/customElevatedButton.dart';
 import '../../widget/auth/customMoveToSignUporLogin.dart';
@@ -40,6 +41,7 @@ class SignUpPage extends StatelessWidget {
                         key: controller.formstat,
                         child: ListView(
                           children: [
+                            const CustomTitle(),
                             Text(
                               "Register",
                               style: Theme.of(context)
@@ -104,17 +106,14 @@ class SignUpPage extends StatelessWidget {
                               text: "Sign up ",
                             ),
                             const SizedBox(
-                              height: 20,
+                              height: 25,
                             ),
-                            SizedBox(
-                              height: Get.height / 3.5,
-                              child: CoustomCheekAccount(
-                                bodyText: " I have an account already !  ",
-                                inkweText: "Login",
-                                onTap: () {
-                                  controller.goToLogin();
-                                },
-                              ),
+                            CoustomCheekAccount(
+                              bodyText: " I have an account already !  ",
+                              inkweText: "Login",
+                              onTap: () {
+                                controller.goToLogin();
+                              },
                             ),
                           ],
                         ),

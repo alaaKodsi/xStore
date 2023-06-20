@@ -11,10 +11,7 @@ class CustomTitle extends StatelessWidget {
       children: [
         Image.asset(
           ImageApp.logo,
-          height: 150,
-        ),
-        const SizedBox(
-          height: 25,
+          height: 200,
         ),
       ],
     );

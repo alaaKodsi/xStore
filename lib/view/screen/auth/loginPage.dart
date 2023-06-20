@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
                                   .copyWith(color: Colors.white),
                             ),
                             const SizedBox(
-                              height: 25,
+                              height: 20,
                             ),
                             CustomTextFormField(
                               controller: controller.email,

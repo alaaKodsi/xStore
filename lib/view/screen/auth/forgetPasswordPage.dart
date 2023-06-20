@@ -47,7 +47,7 @@ class FotgetPasswordPage extends StatelessWidget {
                                 hint: "Enter your email ",
                                 icon: Icons.email_outlined),
                             const SizedBox(
-                              height: 30,
+                              height: 20,
                             ),
                             Align(
                               alignment: Alignment.bottomCenter,
