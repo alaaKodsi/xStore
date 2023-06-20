@@ -5,15 +5,20 @@ import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homePage.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
+import 'package:xstore/view/screen/splashScreen.dart';
 import 'view/screen/auth/checkEmail.dart';
 import 'view/screen/auth/forgetPasswordPage.dart';
 import 'view/screen/auth/resetPassword.dart';
 import 'view/screen/auth/verfiyCode.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name: "/", page: () => const OnboardingPage(), middlewares: [
-    MyMiddelware(),
-  ]),
+  GetPage(name: "/", page: () => const SplashScreen()),
+  GetPage(
+      name: "/onboarding",
+      page: () => const OnboardingPage(),
+      middlewares: [
+        MyMiddelware(),
+      ]),
 
   // Auth
 
