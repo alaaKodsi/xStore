@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/view/widget/auth/customOtpText.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
 import '../../../controller/auth/verifyCodeResetPasswordController.dart';
 import '../../../core/constant/color.dart';
 
@@ -15,16 +16,7 @@ class VerfiyCode extends StatelessWidget {
     Get.put(VerifyCodeControllerImp());
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: Text("Verification Code",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: Colors.white)),
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-        ),
+        appBar: const CustomAppBar(title: "Verification Code"),
         body: GetBuilder<VerifyCodeControllerImp>(
             builder: (controller) => HandlingRequest(
                   statusRequest: controller.statusRequest,

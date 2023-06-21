@@ -6,6 +6,7 @@ import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
 import 'package:xstore/view/widget/auth/customElevatedButton.dart';
 import 'package:xstore/view/widget/auth/customTextFormField.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
 import '../../../core/constant/color.dart';
 
 class FotgetPasswordPage extends StatelessWidget {
@@ -16,16 +17,7 @@ class FotgetPasswordPage extends StatelessWidget {
     Get.put(CheckEmailControllerImp());
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: Text("Forgot Password",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: Colors.white)),
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-        ),
+        appBar: const CustomAppBar(title: "Forgot Password"),
         body: GetBuilder<CheckEmailControllerImp>(
             builder: (controller) => HandlingRequest(
                   statusRequest: controller.statusRequest,

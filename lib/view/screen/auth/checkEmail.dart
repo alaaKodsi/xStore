@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/auth/checkEmailController.dart';
 import 'package:xstore/core/class/handlingData.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
 import '../../../core/constant/color.dart';
 import '../../widget/auth/customOtpText.dart';
 
@@ -13,16 +14,7 @@ class CheckEmail extends StatelessWidget {
     Get.put(CheckEmailControllerImp());
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: Text("Check Email",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: Colors.white)),
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-        ),
+        appBar: const CustomAppBar(title: "Check Email"),
         body: GetBuilder<CheckEmailControllerImp>(
             builder: (controller) => HandlingRequest(
                   statusRequest: controller.statusRequest,

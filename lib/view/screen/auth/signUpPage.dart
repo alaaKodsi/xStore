@@ -5,6 +5,7 @@ import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/functions/exitApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
 import 'package:xstore/view/widget/auth/customTitle.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
 import '../../../controller/auth/signUpController.dart';
 import '../../widget/auth/customElevatedButton.dart';
 import '../../widget/auth/customMoveToSignUporLogin.dart';
@@ -18,18 +19,7 @@ class SignUpPage extends StatelessWidget {
     Get.put(SignUpControllerImp());
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: Text(
-          "Sign Up",
-          style: Theme.of(context)
-              .textTheme
-              .titleLarge!
-              .copyWith(color: Colors.white),
-        ),
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: "Sign Up"),
       body: WillPopScope(
           onWillPop: alertExitApp,
           child: GetBuilder<SignUpControllerImp>(

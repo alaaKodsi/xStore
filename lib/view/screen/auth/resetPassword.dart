@@ -4,6 +4,7 @@ import 'package:xstore/controller/auth/resetPassword.dart';
 import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/view/widget/auth/customElevatedButton.dart';
 import 'package:xstore/view/widget/auth/customTextFormField.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/functions/validInput.dart';
 
@@ -15,15 +16,8 @@ class ResetPassword extends StatelessWidget {
     Get.put(ResetPasswordControllerImp());
     return Scaffold(
         backgroundColor: backgroundColor,
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.white),
-          title: Text("Reset Password",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: Colors.white)),
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
+        appBar: const CustomAppBar(
+          title: "Reset Password",
         ),
         body: GetBuilder<ResetPasswordControllerImp>(
             builder: (controller) => HandlingRequest(

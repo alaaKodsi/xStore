@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:xstore/controller/auth/loginContorller.dart';
 import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/core/functions/validInput.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/functions/exitApp.dart';
 import '../../widget/auth/customElevatedButton.dart';
@@ -19,15 +20,7 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: AppBar(
-        title: Text("Login",
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(color: Colors.white)),
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: "Login"),
       body: WillPopScope(
           onWillPop: alertExitApp,
           child: GetBuilder<LoginControllerImp>(
