@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+import '../../../core/constant/color.dart';
+
 // ignore: must_be_immutable
 class CoustomCheekAccount extends StatelessWidget {
   String bodyText;
@@ -21,13 +23,13 @@ class CoustomCheekAccount extends StatelessWidget {
       children: [
         Text(
           bodyText,
-          style: const TextStyle(fontSize: 16, color: Colors.black54),
+          style: const TextStyle(fontSize: 16, color: Colors.white),
         ),
         InkWell(
           onTap: onTap,
           child: Text(
             inkweText,
-            style: const TextStyle(color: Colors.white, fontSize: 19),
+            style: const TextStyle(color: primryColor, fontSize: 19),
           ),
         )
       ],
