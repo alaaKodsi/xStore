@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/constant/imageApp.dart';
-import 'package:xstore/view/screen/onboardingPage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
