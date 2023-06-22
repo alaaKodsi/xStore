@@ -10,7 +10,9 @@ class LinkApi {
 
   static const String verifyCodeToRessePass =
       "$root/forgotpassword/verifyCode.Php";
-
   static const String resetPassword = "$root/forgotpassword/resetPassword.Php";
   static const String checkEmail = "$root/forgotpassword/checkEmail.Php";
+
+  // home
+  static const String home = "$root/home.Php";
 }
