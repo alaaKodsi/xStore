@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/auth/checkEmailController.dart';
 import 'package:xstore/core/class/handlingData.dart';
+import 'package:xstore/core/constant/color.dart';
+import 'package:xstore/view/widget/auth/customOtpText.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
-import '../../../core/constant/color.dart';
-import '../../widget/auth/customOtpText.dart';
 
 class CheckEmail extends StatelessWidget {
   const CheckEmail({super.key});

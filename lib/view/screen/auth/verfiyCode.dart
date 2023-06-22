@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:xstore/controller/auth/verifyCodeResetPasswordController.dart';
 import 'package:xstore/core/class/handlingData.dart';
+import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/view/widget/auth/customOtpText.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
-import '../../../controller/auth/verifyCodeResetPasswordController.dart';
-import '../../../core/constant/color.dart';
 
 class VerfiyCode extends StatelessWidget {
   const VerfiyCode({super.key});

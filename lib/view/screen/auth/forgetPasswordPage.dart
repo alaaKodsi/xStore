@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/auth/checkEmail.dart';
 import 'package:xstore/core/class/handlingData.dart';
+import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/core/functions/validInput.dart';
 import 'package:xstore/view/widget/auth/customElevatedButton.dart';
 import 'package:xstore/view/widget/auth/customTextFormField.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
-import '../../../core/constant/color.dart';
 
 class FotgetPasswordPage extends StatelessWidget {
   const FotgetPasswordPage({super.key});

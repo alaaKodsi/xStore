@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/initialBindings.dart';
 import 'package:xstore/routes.dart';
@@ -10,7 +11,10 @@ import 'core/services/local.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await intialService();
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {

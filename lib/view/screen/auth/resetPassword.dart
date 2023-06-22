@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/auth/resetPassword.dart';
 import 'package:xstore/core/class/handlingData.dart';
+import 'package:xstore/core/constant/color.dart';
+import 'package:xstore/core/functions/validInput.dart';
 import 'package:xstore/view/widget/auth/customElevatedButton.dart';
 import 'package:xstore/view/widget/auth/customTextFormField.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
-import '../../../core/constant/color.dart';
-import '../../../core/functions/validInput.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
