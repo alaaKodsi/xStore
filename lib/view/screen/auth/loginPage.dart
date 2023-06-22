@@ -36,16 +36,21 @@ class LoginPage extends StatelessWidget {
                               key: controller.formstat,
                               child: Column(
                                 children: [
-                                  const CustomTitle(),
-                                  Text(
-                                    "Welcome Back ",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displaySmall!
-                                        .copyWith(color: Colors.white),
-                                  ),
-                                  const SizedBox(
-                                    height: 20,
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height /
+                                        2.5,
+                                    child: Column(
+                                      children: [
+                                        const CustomTitle(),
+                                        Text(
+                                          "Welcome Back ",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .displaySmall!
+                                              .copyWith(color: Colors.white),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                   CustomTextFormField(
                                     controller: controller.email,
