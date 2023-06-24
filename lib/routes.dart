@@ -24,7 +24,7 @@ List<GetPage<dynamic>>? routes = [
 
   GetPage(
     name: "/Login",
-    page: () => const LoginPage(),
+    page: () => const HomePage(),
   ),
   GetPage(name: "/signUp", page: () => const SignUpPage()),
   GetPage(name: "/forgetPassword", page: () => const FotgetPasswordPage()),

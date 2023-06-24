@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xstore/core/constant/color.dart';
+import 'package:xstore/view/widget/customAppbar.dart';
+import 'package:xstore/view/widget/home/CoustomCardForDiscount.dart';
+import 'package:xstore/view/widget/home/searchField.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,16 +11,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: AppBar(
-        title: Text("Home",
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(color: Colors.white)),
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
+      appBar: const CustomAppBar(
+        title: 'Home',
       ),
-      body: Container(),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: ListView(
+          children: const [
+            SearchField(),
+            CoustomCardForDiscount(),
+          ],
+        ),
+      ),
     );
   }
 }
