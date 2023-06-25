@@ -1,6 +1,5 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:xstore/core/services/middelware.dart';
-import 'package:xstore/view/screen/auth/loginPage.dart';
 import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homePage.dart';

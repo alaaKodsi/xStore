@@ -31,7 +31,7 @@ class CoustomCardForDiscount extends StatelessWidget {
                   height: 125,
                   width: 125,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 225, 255, 190),
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(100)),
                   child: const Text(
                     "70%",
