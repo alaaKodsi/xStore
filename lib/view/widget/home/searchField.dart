@@ -10,6 +10,10 @@ class SearchField extends StatelessWidget {
       cursorColor: white,
       style: const TextStyle(color: white),
       decoration: InputDecoration(
+        hintText: "   Search",
+        hintStyle: const TextStyle(
+          color: Colors.white,
+        ),
         fillColor: Colors.grey[700],
         filled: true,
         suffixIcon: const Icon(Icons.search_outlined),
