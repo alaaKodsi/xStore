@@ -3,6 +3,7 @@ import 'package:xstore/core/services/middelware.dart';
 import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homePage.dart';
+import 'package:xstore/view/screen/home/homeScreen.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
 import 'package:xstore/view/screen/splashScreen.dart';
 import 'view/screen/auth/checkEmail.dart';
@@ -23,7 +24,7 @@ List<GetPage<dynamic>>? routes = [
 
   GetPage(
     name: "/Login",
-    page: () => const HomePage(),
+    page: () => const HomeScreen(),
   ),
   GetPage(name: "/signUp", page: () => const SignUpPage()),
   GetPage(name: "/forgetPassword", page: () => const FotgetPasswordPage()),
@@ -34,4 +35,5 @@ List<GetPage<dynamic>>? routes = [
 
   /// home
   GetPage(name: "/home", page: () => const HomePage()),
+  GetPage(name: "/homeRoot", page: () => const HomeScreen()),
 ];

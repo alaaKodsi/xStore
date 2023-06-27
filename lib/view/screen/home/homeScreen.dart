@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: backgroundColor,
           appBar: const CustomAppBar(title: "X Store"),
           bottomNavigationBar: BottomAppBar(
-            color: const Color.fromARGB(255, 0, 0, 0),
+            color: Colors.black,
             height: 60,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
