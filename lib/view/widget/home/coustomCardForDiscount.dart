@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:xstore/core/constant/color.dart';
 
 class CoustomCardForDiscount extends StatelessWidget {
   const CoustomCardForDiscount({super.key});
@@ -16,71 +14,53 @@ class CoustomCardForDiscount extends StatelessWidget {
             "Offers",
             style: TextStyle(
               fontSize: 25,
+              fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
           const SizedBox(
             height: 15,
           ),
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage("assets/images/forDiscount.png"),
-                  fit: BoxFit.fill),
-              color: white,
-              borderRadius: BorderRadius.horizontal(
-                left: Radius.circular(35),
+          Stack(
+            children: [
+              Image.asset(
+                "assets/images/forDiscount.png",
+                fit: BoxFit.cover,
               ),
-            ),
-            width: Get.width,
-            height: 200,
-            child: Stack(
-              children: [
-                Positioned(
-                    bottom: -20,
-                    right: -15,
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 125,
-                      width: 125,
-                      decoration: BoxDecoration(
+              const Positioned(
+                  left: 100,
+                  top: 75,
+                  child: Text(
+                    "SUMMER SALE",
+                    style: TextStyle(
+                        // fontFamily: "SparkyStonesRegular",
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25),
+                  )),
+              Positioned(
+                  left: 20,
+                  bottom: 0,
+                  child: Image.asset(
+                    "assets/images/newOffer.png",
+                    height: 150,
+                    width: 150,
+                  )),
+              const Positioned(
+                  right: 75,
+                  bottom: 75,
+                  child: InkWell(
+                    child: Text(
+                      "clik here",
+                      style: TextStyle(
+                          // fontFamily: "SparkyStonesRegular",
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Text(
-                        "70%",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 40),
-                      ),
-                    )),
-                const Positioned(
-                    left: 100,
-                    top: 40,
-                    child: Column(
-                      children: [
-                        Text(
-                          "SUMMER SALE",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 60,
-                        ),
-                        Text(
-                          "oper Now",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ))
-              ],
-            ),
-          ),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
+                    ),
+                  )),
+            ],
+          )
         ],
       ),
     );

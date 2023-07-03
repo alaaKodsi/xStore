@@ -17,41 +17,44 @@ class HomeScreen extends StatelessWidget {
       return Scaffold(
           backgroundColor: backgroundColor,
           appBar: const CustomAppBar(title: "X Store"),
-          bottomNavigationBar: BottomAppBar(
-            color: Colors.black,
-            height: 60,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CustomButtonAppbar(
-                  icon: Icons.home_outlined,
-                  activ: controller.currentpage == 0 ? true : false,
-                  onPressed: () {
-                    controller.changePage(0);
-                  },
-                ),
-                CustomButtonAppbar(
-                  icon: Icons.notifications_outlined,
-                  activ: controller.currentpage == 1 ? true : false,
-                  onPressed: () {
-                    controller.changePage(1);
-                  },
-                ),
-                CustomButtonAppbar(
-                  icon: Icons.shopping_basket_outlined,
-                  activ: controller.currentpage == 2 ? true : false,
-                  onPressed: () {
-                    controller.changePage(2);
-                  },
-                ),
-                CustomButtonAppbar(
-                  icon: Icons.settings_outlined,
-                  activ: controller.currentpage == 3 ? true : false,
-                  onPressed: () {
-                    controller.changePage(3);
-                  },
-                ),
-              ],
+          bottomNavigationBar: Container(
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
+            child: BottomAppBar(
+              color: Colors.black,
+              height: 60,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomButtonAppbar(
+                    icon: Icons.home_outlined,
+                    activ: controller.currentpage == 0 ? true : false,
+                    onPressed: () {
+                      controller.changePage(0);
+                    },
+                  ),
+                  CustomButtonAppbar(
+                    icon: Icons.notifications_outlined,
+                    activ: controller.currentpage == 1 ? true : false,
+                    onPressed: () {
+                      controller.changePage(1);
+                    },
+                  ),
+                  CustomButtonAppbar(
+                    icon: Icons.shopping_basket_outlined,
+                    activ: controller.currentpage == 2 ? true : false,
+                    onPressed: () {
+                      controller.changePage(2);
+                    },
+                  ),
+                  CustomButtonAppbar(
+                    icon: Icons.settings_outlined,
+                    activ: controller.currentpage == 3 ? true : false,
+                    onPressed: () {
+                      controller.changePage(3);
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           body: controller.listPage.elementAt(controller.currentpage));

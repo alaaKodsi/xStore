@@ -8,6 +8,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: white,
+      // mouseCursor: MouseCursor.defer,
       style: const TextStyle(color: white),
       decoration: InputDecoration(
         hintText: "   Search",

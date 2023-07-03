@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xstore/view/widget/home/CoustomCardForDiscount.dart';
+import 'package:xstore/view/widget/home/coustomCategoies.dart';
 import 'package:xstore/view/widget/home/searchField.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,43 +8,49 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: Column(
               children: [
-                const SearchField(),
-                const CoustomCardForDiscount(),
-                const Text(
-                  "CategorIi",
-                  style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.white,
-                  ),
+                SearchField(),
+                CoustomCardForDiscount(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Categories",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.only(top: 20),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.grey[700],
-                              borderRadius: BorderRadius.circular(30)),
-                          height: 100,
-                          width: 100,
-                          child: const Icon(
-                            Icons.wallet,
-                            color: Colors.white,
-                          ),
-                        ),
+                        CustomCategories(
+                            imageName: "assets/images/computer.svg"),
+                        CustomCategories(
+                            imageName: "assets/images/headset.svg"),
+                        CustomCategories(
+                            imageName: "assets/images/keyboard.svg"),
+                        CustomCategories(imageName: "assets/images/mouse.svg"),
+                        CustomCategories(imageName: "assets/images/tablet.svg"),
+                        CustomCategories(imageName: "assets/images/mobile.svg"),
+                        CustomCategories(
+                            imageName: "assets/images/compact-disc .svg"),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
