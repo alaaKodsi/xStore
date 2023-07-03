@@ -37,16 +37,31 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       children: [
                         CustomCategories(
-                            imageName: "assets/images/computer.svg"),
+                            imageName: "assets/images/computer.svg",
+                            catName: "Computer"),
                         CustomCategories(
-                            imageName: "assets/images/headset.svg"),
+                            imageName: "assets/images/headset.svg",
+                            catName: "HeadSet"),
                         CustomCategories(
-                            imageName: "assets/images/keyboard.svg"),
-                        CustomCategories(imageName: "assets/images/mouse.svg"),
-                        CustomCategories(imageName: "assets/images/tablet.svg"),
-                        CustomCategories(imageName: "assets/images/mobile.svg"),
+                          imageName: "assets/images/keyboard.svg",
+                          catName: 'Keyboard',
+                        ),
                         CustomCategories(
-                            imageName: "assets/images/compact-disc .svg"),
+                          imageName: "assets/images/mouse.svg",
+                          catName: 'Mouse',
+                        ),
+                        CustomCategories(
+                          imageName: "assets/images/tablet.svg",
+                          catName: 'Tablet',
+                        ),
+                        CustomCategories(
+                          imageName: "assets/images/mobile.svg",
+                          catName: 'Phone',
+                        ),
+                        CustomCategories(
+                          imageName: "assets/images/compact-disc .svg",
+                          catName: 'Video Games',
+                        ),
                       ],
                     ),
                   ),

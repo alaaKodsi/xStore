@@ -4,9 +4,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomCategories extends StatelessWidget {
   final String imageName;
+  final String catName;
+
   const CustomCategories({
     Key? key,
     required this.imageName,
+    required this.catName,
   }) : super(key: key);
 
   @override
@@ -18,6 +21,13 @@ class CustomCategories extends StatelessWidget {
           child: SizedBox(
               height: 75, width: 75, child: SvgPicture.asset(imageName)),
         ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          catName,
+          style: const TextStyle(fontSize: 15, color: Colors.white),
+        )
       ],
     );
   }
