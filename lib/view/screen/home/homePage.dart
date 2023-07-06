@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:xstore/controller/home_Controller.dart';
+import 'package:xstore/core/class/StatusRequest.dart';
+import 'package:xstore/core/class/handlingData.dart';
+import 'package:xstore/core/constant/linksApi.dart';
 import 'package:xstore/view/widget/home/CoustomCardForDiscount.dart';
 import 'package:xstore/view/widget/home/coustomCategoies.dart';
+import 'package:xstore/view/widget/home/listOfCategoies.dart';
 import 'package:xstore/view/widget/home/searchField.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,69 +14,27 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(20),
+    StatusRequest statusRequest = StatusRequest.none;
+    Get.put(HomeControllerImp());
+    return GetBuilder<HomeControllerImp>(builder: (controller) {
+      return HandlingDataView(
+          statusRequest: statusRequest,
+          widget: const SingleChildScrollView(
             child: Column(
               children: [
-                SearchField(),
-                CoustomCardForDiscount(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Categories",
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
                 Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        CustomCategories(
-                            imageName: "assets/images/computer.svg",
-                            catName: "Computer"),
-                        CustomCategories(
-                            imageName: "assets/images/headset.svg",
-                            catName: "HeadSet"),
-                        CustomCategories(
-                          imageName: "assets/images/keyboard.svg",
-                          catName: 'Keyboard',
-                        ),
-                        CustomCategories(
-                          imageName: "assets/images/mouse.svg",
-                          catName: 'Mouse',
-                        ),
-                        CustomCategories(
-                          imageName: "assets/images/tablet.svg",
-                          catName: 'Tablet',
-                        ),
-                        CustomCategories(
-                          imageName: "assets/images/mobile.svg",
-                          catName: 'Phone',
-                        ),
-                        CustomCategories(
-                          imageName: "assets/images/compact-disc .svg",
-                          catName: 'Video Games',
-                        ),
-                      ],
-                    ),
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      SearchField(),
+                      CoustomCardForDiscount(),
+                      ListOfCategories(),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+          ));
+    });
   }
 }

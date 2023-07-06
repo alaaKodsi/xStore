@@ -19,7 +19,7 @@ class CustomCategories extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: SizedBox(
-              height: 75, width: 75, child: SvgPicture.asset(imageName)),
+              height: 75, width: 75, child: SvgPicture.network(imageName)),
         ),
         const SizedBox(
           height: 10,

@@ -1,6 +1,11 @@
 class LinkApi {
   static const String root = "http://192.168.1.110/xstore";
 
+  //image
+
+  static const String imageCategories = "$root/images/categories";
+  static const String imageItems = "$root/images/items";
+
   //Auth
   static const String signup = "$root/auth/signup.Php";
   static const String verifyCode = "$root/auth/verifiycode.Php";
