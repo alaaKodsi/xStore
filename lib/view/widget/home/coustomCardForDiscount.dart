@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xstore/core/constant/color.dart';
 
 class CoustomCardForDiscount extends StatelessWidget {
   const CoustomCardForDiscount({super.key});
@@ -46,17 +47,25 @@ class CoustomCardForDiscount extends StatelessWidget {
                     height: 150,
                     width: 150,
                   )),
-              const Positioned(
+              Positioned(
                   right: 75,
                   bottom: 75,
-                  child: InkWell(
-                    child: Text(
-                      "clik here",
-                      style: TextStyle(
-                          // fontFamily: "SparkyStonesRegular",
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: primryColor,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(),
+                    ),
+                    child: MaterialButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "Shop Now",
+                        style: TextStyle(
+                            // fontFamily: "SparkyStonesRegular",
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      ),
                     ),
                   )),
             ],
