@@ -70,6 +70,9 @@ class ItemContainer extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       Text(
                         price,
                         style: const TextStyle(

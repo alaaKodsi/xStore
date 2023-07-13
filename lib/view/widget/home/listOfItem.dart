@@ -43,7 +43,7 @@ class Item extends StatelessWidget {
     return ItemContainer(
       imageName: "${LinkApi.imageItems}/${itmesModel.itemsImage}",
       nameItem: "${itmesModel.itemsName}",
-      price: "${itmesModel.itemsPrice.toString()}" " \$",
+      price: "${itmesModel.itemsPrice}" " \$",
       onPressedIcon: () {},
     );
   }

@@ -6,7 +6,7 @@ class ItmesModel {
   String? itemsImage;
   String? itemsCount;
   int? itemsActive;
-  int? itemsPrice;
+  String? itemsPrice;
   int? itemsDiscoiunt;
   String? itemsDateTime;
   int? itemsCat;
