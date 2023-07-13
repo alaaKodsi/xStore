@@ -6,30 +6,33 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      cursorColor: white,
-      // mouseCursor: MouseCursor.defer,
-      style: const TextStyle(color: white),
-      decoration: InputDecoration(
-        hintText: "   Search",
-        hintStyle: const TextStyle(
-          color: Colors.white,
-        ),
-        fillColor: Colors.grey[700],
-        filled: true,
-        suffixIcon: const Icon(Icons.search_outlined),
-        suffixIconColor: white,
-        enabledBorder: OutlineInputBorder(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 15),
+      child: TextFormField(
+        cursorColor: white,
+        // mouseCursor: MouseCursor.defer,
+        style: const TextStyle(color: white),
+        decoration: InputDecoration(
+          hintText: "   Search",
+          hintStyle: const TextStyle(
+            color: Colors.white,
+          ),
+          fillColor: Colors.grey[700],
+          filled: true,
+          suffixIcon: const Icon(Icons.search_outlined),
+          suffixIconColor: white,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide: const BorderSide(color: backgroundColor)),
+          labelStyle: const TextStyle(color: backgroundColor),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: backgroundColor),
             borderRadius: BorderRadius.circular(20),
-            borderSide: const BorderSide(color: backgroundColor)),
-        labelStyle: const TextStyle(color: backgroundColor),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: backgroundColor),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        border: OutlineInputBorder(
-          borderSide: const BorderSide(color: backgroundColor),
-          borderRadius: BorderRadius.circular(20),
+          ),
+          border: OutlineInputBorder(
+            borderSide: const BorderSide(color: backgroundColor),
+            borderRadius: BorderRadius.circular(20),
+          ),
         ),
       ),
     );

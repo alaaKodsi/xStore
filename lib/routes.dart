@@ -4,6 +4,7 @@ import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homePage.dart';
 import 'package:xstore/view/screen/home/homeScreen.dart';
+import 'package:xstore/view/screen/itmePage.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
 import 'package:xstore/view/screen/splashScreen.dart';
 import 'view/screen/auth/checkEmail.dart';
@@ -36,4 +37,5 @@ List<GetPage<dynamic>>? routes = [
   /// home
   GetPage(name: "/home", page: () => const HomePage()),
   GetPage(name: "/homeRoot", page: () => const HomeScreen()),
+  GetPage(name: "/itmeCat", page: () => const ItemsPage()),
 ];

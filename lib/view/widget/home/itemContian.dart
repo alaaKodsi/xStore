@@ -50,13 +50,13 @@ class ItemContainer extends StatelessWidget {
           ),
           Positioned(
             bottom: 20,
-            left: -1,
+            left: 5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                    top: 10,
+                    top: 5,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

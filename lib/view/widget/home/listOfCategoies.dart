@@ -34,6 +34,7 @@ class ListOfCategories extends GetView<HomeControllerImp> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, i) {
                   return Catergories(
+                    index: i,
                     categoriesModel:
                         CategoriesModel.fromJson(controller.categories[i]),
                   );
@@ -45,15 +46,21 @@ class ListOfCategories extends GetView<HomeControllerImp> {
   }
 }
 
-class Catergories extends StatelessWidget {
+class Catergories extends GetView<HomeControllerImp> {
   final CategoriesModel categoriesModel;
-  const Catergories({super.key, required this.categoriesModel});
+  final int? index;
+  const Catergories({super.key, required this.categoriesModel, this.index});
 
   @override
   Widget build(BuildContext context) {
-    return CustomCategories(
-        imageName:
-            "${LinkApi.imageCategories}/${categoriesModel.categoriesImage}",
-        catName: "${categoriesModel.categoriesName}");
+    return InkWell(
+      onTap: () {
+        controller.goToItmeCategories(controller.categories, index!);
+      },
+      child: CustomCategories(
+          imageName:
+              "${LinkApi.imageCategories}/${categoriesModel.categoriesImage}",
+          catName: "${categoriesModel.categoriesName}"),
+    );
   }
 }
