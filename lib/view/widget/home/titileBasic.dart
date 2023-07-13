@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class TitileBasic extends StatelessWidget {
   final String titleName;
+  final void Function()? seeAll;
   const TitileBasic({
     Key? key,
     required this.titleName,
+    this.seeAll,
   }) : super(key: key);
 
   @override
@@ -23,16 +25,20 @@ class TitileBasic extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            Text(
-              "See All",
-              style: TextStyle(
-                color: Colors.grey[500],
+            InkWell(
+              onTap: seeAll,
+              child: Text(
+                "See All",
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.grey[500],
+                ),
               ),
             ),
           ],
         ),
         const SizedBox(
-          height: 30,
+          height: 10,
         ),
       ],
     );

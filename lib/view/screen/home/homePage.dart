@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:xstore/controller/home_Controller.dart';
 import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/view/widget/home/CoustomCardForDiscount.dart';
-import 'package:xstore/view/widget/home/itemContian.dart';
 import 'package:xstore/view/widget/home/listOfCategoies.dart';
+import 'package:xstore/view/widget/home/listOfItem.dart';
 import 'package:xstore/view/widget/home/searchField.dart';
 import 'package:xstore/view/widget/home/titileBasic.dart';
 
@@ -17,18 +17,21 @@ class HomePage extends StatelessWidget {
     return GetBuilder<HomeControllerImp>(builder: (controller) {
       return HandlingDataView(
           statusRequest: controller.statusRequest,
-          widget: const SingleChildScrollView(
+          widget: SingleChildScrollView(
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      SearchField(),
-                      CoustomCardForDiscount(),
-                      ListOfCategories(),
-                      TitileBasic(titleName: "For you"),
-                      ItemContainer(),
+                      const SearchField(),
+                      const CoustomCardForDiscount(),
+                      const ListOfCategories(),
+                      TitileBasic(
+                        titleName: "For you",
+                        seeAll: () {},
+                      ),
+                      const ListOfItem(),
                     ],
                   ),
                 ),
