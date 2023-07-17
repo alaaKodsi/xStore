@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/homeScreen_controller.dart';
+import 'package:xstore/controller/home/homeScreen_controller.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
 import 'package:xstore/view/widget/home/customButtonAppbar.dart';

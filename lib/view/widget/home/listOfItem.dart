@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/home_Controller.dart';
+import 'package:xstore/controller/home/home_Controller.dart';
 import 'package:xstore/core/constant/linksApi.dart';
 import 'package:xstore/data/model/itemsModel.dart';
 import 'package:xstore/view/widget/home/itemContian.dart';

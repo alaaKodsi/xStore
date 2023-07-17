@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/home_Controller.dart';
+import 'package:xstore/controller/home/home_Controller.dart';
 import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/view/widget/home/CoustomCardForDiscount.dart';
 import 'package:xstore/view/widget/home/listOfCategoies.dart';
@@ -29,7 +29,9 @@ class HomePage extends StatelessWidget {
                       const ListOfCategories(),
                       TitileBasic(
                         titleName: "For you",
-                        seeAll: () {},
+                        seeAll: () {
+                          controller.goToSeeAll();
+                        },
                       ),
                       const ListOfItem(),
                     ],
