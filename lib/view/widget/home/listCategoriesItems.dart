@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/itme_Controller.dart';
+import 'package:xstore/controller/Items/items_Controller.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/data/model/categoriesModel.dart';
 
@@ -57,7 +57,8 @@ class Catergories extends GetView<ItemsControllerImp> {
         splashColor: backgroundColor,
         onTap: () {
           // controller.goToItmeCategories(controller.categories, index!);
-          controller.changeCat(index!);
+          controller.changeCat(
+              index!, categoriesModel.categoriesId!.toString());
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),

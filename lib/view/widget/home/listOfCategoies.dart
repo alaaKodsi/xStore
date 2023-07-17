@@ -49,13 +49,15 @@ class ListOfCategories extends GetView<HomeControllerImp> {
 class Catergories extends GetView<HomeControllerImp> {
   final CategoriesModel categoriesModel;
   final int? index;
+
   const Catergories({super.key, required this.categoriesModel, this.index});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToItmeCategories(controller.categories, index!);
+        controller.goToItmeCategories(controller.categories, index!,
+            categoriesModel.categoriesId!.toString());
       },
       child: CustomCategories(
           imageName:

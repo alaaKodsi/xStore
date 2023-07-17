@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   auto_animated: ^3.1.0
+  cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   firebase_core: ^2.12.0
@@ -75,7 +76,6 @@ flutter:
     - family: SparkyStonesRegular
       fonts:
         - asset: assets/font/SparkyStonesRegular-BW6ld.ttf
-
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

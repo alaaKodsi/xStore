@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ItemContainer extends StatelessWidget {
@@ -33,8 +34,8 @@ class ItemContainer extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                Image.network(
-                  imageName,
+                CachedNetworkImage(
+                  imageUrl: imageName,
                   height: 150,
                   width: 150,
                 ),

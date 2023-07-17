@@ -7,7 +7,7 @@ import 'package:xstore/data/datasource/remotly/homeData.dart';
 abstract class HomeController extends GetxController {
   initialData();
   getdata();
-  goToItmeCategories(List categories, int selectedCat);
+  goToItmeCategories(List categories, int selectedCat, String catId);
 }
 
 class HomeControllerImp extends HomeController {
@@ -46,8 +46,6 @@ class HomeControllerImp extends HomeController {
       if (response['status'] == "success") {
         categories.addAll(response['categories']);
         items.addAll(response['items']);
-        print("===================--------------------------------------");
-        print(items);
       } else {
         statusRequest = StatusRequest.failure;
       }
@@ -56,8 +54,11 @@ class HomeControllerImp extends HomeController {
   }
 
   @override
-  goToItmeCategories(List categories, int selectedCat) {
-    Get.toNamed("itmeCat",
-        arguments: {"categories": categories, "selectedCat": selectedCat});
+  goToItmeCategories(List categories, int selectedCat, String catId) {
+    Get.toNamed("itmeCat", arguments: {
+      "categories": categories,
+      "selectedCat": selectedCat,
+      "catId": catId
+    });
   }
 }
