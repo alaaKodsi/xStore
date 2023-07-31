@@ -23,9 +23,16 @@ class HandlingDataView extends StatelessWidget {
                     child: Lottie.asset(ImageApp.error404,
                         width: 250, height: 250))
                 : statusRequest == StatusRequest.failure
-                    ? Center(
-                        child: Lottie.asset(ImageApp.noData,
-                            width: 250, height: 250))
+                    ? Column(
+                        children: [
+                          const SizedBox(
+                            height: 100,
+                          ),
+                          Center(
+                              child: Lottie.asset(ImageApp.noData,
+                                  width: 250, height: 250)),
+                        ],
+                      )
                     : widget;
   }
 }

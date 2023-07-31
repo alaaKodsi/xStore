@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:xstore/core/constant/color.dart';
 
 import 'package:xstore/core/constant/linksApi.dart';
 import 'package:xstore/data/model/itemsModel.dart';
@@ -18,54 +19,51 @@ class CustomListItems extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: InkWell(
           child: Card(
+        color: Color(0xff232a39),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.all(11),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CachedNetworkImage(
-                  imageUrl: "${LinkApi.imageItems}/${itmesModel.itemsImage!}",
-                  height: 100,
-                  fit: BoxFit.cover,
+                Container(
+                  decoration: BoxDecoration(
+                      color: Color(0xff9b9fbd),
+                      borderRadius: BorderRadius.circular(10)),
+                  height: 170,
+                  width: 150,
+                  child: CachedNetworkImage(
+                    imageUrl: "${LinkApi.imageItems}/${itmesModel.itemsImage!}",
+                    height: 70,
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
                 const SizedBox(height: 10),
-                Text(itmesModel.itemsName!,
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Rating 3.5 ", textAlign: TextAlign.center),
-                    Container(
-                      alignment: Alignment.bottomCenter,
-                      height: 22,
-                      child: Row(
-                        children: [
-                          ...List.generate(
-                              5,
-                              (index) => const Icon(
-                                    Icons.star,
-                                    size: 15,
-                                  ))
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("${itmesModel.itemsPrice} \$",
+                    Text(itmesModel.itemsName!,
                         style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        )),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.favorite_border,
-                        ))
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold)),
+                    Row(
+                      children: [
+                        Text("${itmesModel.itemsPrice} \$",
+                            style: const TextStyle(
+                              color: primryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const Spacer(),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              color: Colors.white,
+                              Icons.favorite_border,
+                            ))
+                      ],
+                    )
                   ],
                 )
               ]),

@@ -18,29 +18,32 @@ class SeeAllPage extends StatelessWidget {
       appBar: const CustomAppBar(title: "X Store"),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: ListView(
-          children: [
-            const SearchField(),
-            GetBuilder<HomeControllerImp>(builder: ((controller) {
-              return HandlingDataView(
-                statusRequest: controller.statusRequest,
-                widget: GridView.builder(
-                    itemCount: controller.allItems.length,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.6,
-                    ),
-                    itemBuilder: (context, i) {
-                      return CustomListItems(
-                        itmesModel: ItmesModel.fromJson(controller.allItems[i]),
-                      );
-                    }),
-              );
-            })),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SearchField(),
+              GetBuilder<HomeControllerImp>(builder: ((controller) {
+                return HandlingDataView(
+                  statusRequest: controller.statusRequest,
+                  widget: GridView.builder(
+                      itemCount: controller.allItems.length,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              // childAspectRatio: 0.5,
+                              childAspectRatio: 0.6),
+                      itemBuilder: (context, i) {
+                        return CustomListItems(
+                          itmesModel:
+                              ItmesModel.fromJson(controller.allItems[i]),
+                        );
+                      }),
+                );
+              })),
+            ],
+          ),
         ),
       ),
     );

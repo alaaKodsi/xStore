@@ -19,9 +19,6 @@ class CoustomCardForDiscount extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          const SizedBox(
-            height: 15,
-          ),
           Stack(
             children: [
               Image.asset(
@@ -50,22 +47,14 @@ class CoustomCardForDiscount extends StatelessWidget {
               Positioned(
                   right: 75,
                   bottom: 75,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: primryColor,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(),
-                    ),
-                    child: MaterialButton(
-                      onPressed: () {},
-                      child: const Text(
-                        "Shop Now",
-                        style: TextStyle(
-                            // fontFamily: "SparkyStonesRegular",
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
+                  child: MaterialButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Shop Now",
+                      style: TextStyle(
+                          color: primryColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15),
                     ),
                   )),
             ],

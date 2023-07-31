@@ -2,6 +2,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:xstore/core/constant/color.dart';
 
 class ItemContainer extends StatelessWidget {
   final String imageName;
@@ -29,7 +30,7 @@ class ItemContainer extends StatelessWidget {
             height: 180,
             width: 180,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(230, 255, 255, 255),
+              color: Color(0xff9b9fbd),
               borderRadius: BorderRadius.circular(30),
             ),
             child: Stack(
@@ -43,6 +44,7 @@ class ItemContainer extends StatelessWidget {
                     bottom: 5,
                     right: -10,
                     child: IconButton(
+                        color: Colors.white,
                         iconSize: 30,
                         onPressed: () {},
                         icon: const Icon(Icons.favorite_border_rounded)))
@@ -79,7 +81,7 @@ class ItemContainer extends StatelessWidget {
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 17,
-                          color: Colors.green,
+                          color: primryColor,
                         ),
                       ),
                     ],
