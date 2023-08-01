@@ -3,21 +3,21 @@ import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
 import 'package:xstore/core/functions/handlingData.dart';
 import 'package:xstore/data/datasource/remotly/itmesData.dart';
+import 'package:xstore/data/model/itemsModel.dart';
 
 abstract class ItemsController extends GetxController {
   intialData();
   changeCat(int val, String catId);
   getItems(String catId);
+  goToProductDetails(ItmesModel itmesModel);
 }
 
 class ItemsControllerImp extends ItemsController {
   List categories = [];
   int? selectedCat;
   late String catId = "1";
-
   ItmesData itmesDate = ItmesData(Get.find());
   List data = [];
-
   late StatusRequest statusRequest;
 
   @override
@@ -64,5 +64,10 @@ class ItemsControllerImp extends ItemsController {
       update();
     }
     update();
+  }
+
+  @override
+  goToProductDetails(itmesModel) {
+    Get.toNamed("productDetails", arguments: {"ItmesModel": itmesModel});
   }
 }

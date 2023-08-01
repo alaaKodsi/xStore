@@ -15,9 +15,16 @@ class HandlingDataView extends StatelessWidget {
     return statusRequest == StatusRequest.loading
         ? Center(child: Lottie.asset(ImageApp.loading, width: 250, height: 250))
         : statusRequest == StatusRequest.offlinefailure
-            ? Center(
-                child:
-                    Lottie.asset(ImageApp.disconnect, width: 250, height: 250))
+            ? Column(
+                children: [
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  Center(
+                      child: Lottie.asset(ImageApp.disconnect,
+                          width: 250, height: 250)),
+                ],
+              )
             : statusRequest == StatusRequest.serverfailure
                 ? Center(
                     child: Lottie.asset(ImageApp.error404,
