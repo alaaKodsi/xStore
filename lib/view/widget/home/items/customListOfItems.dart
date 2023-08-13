@@ -37,11 +37,14 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                           borderRadius: BorderRadius.circular(10)),
                       height: 170,
                       width: 150,
-                      child: CachedNetworkImage(
-                        imageUrl:
-                            "${LinkApi.imageItems}/${itmesModel.itemsImage!}",
-                        height: 70,
-                        fit: BoxFit.scaleDown,
+                      child: Hero(
+                        tag: itmesModel.itemsId!,
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              "${LinkApi.imageItems}/${itmesModel.itemsImage!}",
+                          height: 70,
+                          fit: BoxFit.scaleDown,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -64,10 +67,14 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                             const Spacer(),
                             IconButton(
                                 onPressed: () {},
-                                icon: const Icon(
-                                  color: Colors.white,
-                                  Icons.favorite_border,
-                                ))
+                                icon: Icon(
+                                  size: 23,
+                                  color:
+                                      const Color.fromARGB(255, 235, 107, 98),
+                                  itmesModel.favorite == 1
+                                      ? Icons.favorite
+                                      : Icons.favorite_border_outlined,
+                                )),
                           ],
                         )
                       ],

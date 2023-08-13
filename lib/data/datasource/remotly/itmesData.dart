@@ -6,9 +6,9 @@ class ItmesData {
 
   ItmesData(this.requestsFromApi);
 
-  getData(String id) async {
-    var response =
-        await requestsFromApi.postData(LinkApi.itmes, {"id": id.toString()});
+  getData(String id, String userId) async {
+    var response = await requestsFromApi.postData(
+        LinkApi.itmes, {"id": id.toString(), "usersid": userId.toString()});
 
     return response.fold((l) => l, (r) => r);
   }

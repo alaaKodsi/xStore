@@ -1,5 +1,5 @@
 class LinkApi {
-  static const String root = "http://192.168.1.100/xstore";
+  static const String root = "http://192.168.1.110/xstore";
 
   //image
 

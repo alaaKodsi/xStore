@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/home/homeScreen_controller.dart';
 import 'package:xstore/core/constant/color.dart';
+import 'package:xstore/core/constant/imageApp.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
 import 'package:xstore/view/widget/home/customButtonAppbar.dart';
 
@@ -26,28 +27,28 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomButtonAppbar(
-                    icon: Icons.home_outlined,
+                    icon: ImageApp.home,
                     activ: controller.currentpage == 0 ? true : false,
                     onPressed: () {
                       controller.changePage(0);
                     },
                   ),
                   CustomButtonAppbar(
-                    icon: Icons.notifications_outlined,
+                    icon: ImageApp.notification,
                     activ: controller.currentpage == 1 ? true : false,
                     onPressed: () {
                       controller.changePage(1);
                     },
                   ),
                   CustomButtonAppbar(
-                    icon: Icons.shopping_basket_outlined,
+                    icon: ImageApp.shoppingCart,
                     activ: controller.currentpage == 2 ? true : false,
                     onPressed: () {
                       controller.changePage(2);
                     },
                   ),
                   CustomButtonAppbar(
-                    icon: Icons.settings_outlined,
+                    icon: ImageApp.settings,
                     activ: controller.currentpage == 3 ? true : false,
                     onPressed: () {
                       controller.changePage(3);

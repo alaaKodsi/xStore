@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
                       const ListOfCategories(),
                       TitileBasic(
                         titleName: "For you",
+                        leadingTitle: "See All",
                         seeAll: () {
                           controller.goToSeeAll();
                         },

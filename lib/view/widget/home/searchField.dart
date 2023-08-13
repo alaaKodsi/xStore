@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:xstore/core/constant/color.dart';
+import 'package:xstore/core/constant/imageApp.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({super.key});
@@ -19,7 +21,14 @@ class SearchField extends StatelessWidget {
           ),
           fillColor: Colors.grey[700],
           filled: true,
-          suffixIcon: const Icon(Icons.search_outlined),
+          suffixIcon: Padding(
+            padding: const EdgeInsets.all(10),
+            child: SvgPicture.asset(
+              ImageApp.search,
+              // ignore: deprecated_member_use
+              color: white,
+            ),
+          ),
           suffixIconColor: white,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),

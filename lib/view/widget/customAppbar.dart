@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xstore/core/constant/color.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -15,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               color: Colors.white,
               fontFamily: "SparkyStonesRegular",
               fontSize: 26)),
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor,
       centerTitle: true,
     );
   }

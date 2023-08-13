@@ -2,6 +2,7 @@
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
 import 'package:xstore/core/functions/handlingData.dart';
+import 'package:xstore/core/services/local.dart';
 import 'package:xstore/data/datasource/remotly/itmesData.dart';
 import 'package:xstore/data/model/itemsModel.dart';
 
@@ -19,6 +20,7 @@ class ItemsControllerImp extends ItemsController {
   ItmesData itmesDate = ItmesData(Get.find());
   List data = [];
   late StatusRequest statusRequest;
+  Myservices myservices = Get.find();
 
   @override
   void onInit() {
@@ -46,9 +48,9 @@ class ItemsControllerImp extends ItemsController {
     data.clear();
     statusRequest = StatusRequest.loading;
     update();
-    var response = await itmesDate.getData(catId);
+    var response = await itmesDate.getData(
+        catId, myservices.sharedPreferences.getString("id")!);
     update();
-
     statusRequest = handlingData(response);
     update();
     if (StatusRequest.success == statusRequest) {

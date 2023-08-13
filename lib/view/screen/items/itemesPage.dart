@@ -34,7 +34,7 @@ class ItemsPage extends StatelessWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.6,
+                      childAspectRatio: 0.57,
                     ),
                     itemBuilder: (context, i) {
                       return CustomListItems(

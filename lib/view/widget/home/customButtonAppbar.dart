@@ -1,11 +1,13 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:xstore/core/class/triangleClipper.dart';
+import 'package:xstore/core/constant/color.dart';
 
 class CustomButtonAppbar extends StatelessWidget {
   final void Function()? onPressed;
-  final IconData icon;
+  final String icon;
   final bool? activ;
 
   const CustomButtonAppbar({
@@ -23,9 +25,8 @@ class CustomButtonAppbar extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
-                  top: -40,
-                  right: 0,
-                  left: 0.0,
+                  top: -20,
+                  right: -1,
                   child: SizedBox(
                     width: 100,
                     height: 100,
@@ -47,12 +48,19 @@ class CustomButtonAppbar extends StatelessWidget {
                     ),
                   ),
                 ),
-                child: IconButton(
-                  onPressed: onPressed,
-                  icon: Icon(
-                    size: 27,
-                    icon,
-                    color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    top: 5,
+                  ),
+                  child: InkWell(
+                    splashColor: backgroundColor,
+                    onTap: onPressed,
+                    child: SvgPicture.asset(
+                      height: 25,
+                      width: 30,
+                      icon,
+                      color: white,
+                    ),
                   ),
                 ),
               ),

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class TitileBasic extends StatelessWidget {
   final String titleName;
+  final String leadingTitle;
   final void Function()? seeAll;
   const TitileBasic({
     Key? key,
     required this.titleName,
+    required this.leadingTitle,
     this.seeAll,
   }) : super(key: key);
 
@@ -28,7 +30,7 @@ class TitileBasic extends StatelessWidget {
             InkWell(
               onTap: seeAll,
               child: Text(
-                "See All",
+                leadingTitle,
                 style: TextStyle(
                   fontSize: 17,
                   color: Colors.grey[500],

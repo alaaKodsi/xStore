@@ -30,7 +30,7 @@ class ItemContainer extends StatelessWidget {
             height: 180,
             width: 180,
             decoration: BoxDecoration(
-              color: Color(0xff9b9fbd),
+              color: colorContainer,
               borderRadius: BorderRadius.circular(30),
             ),
             child: Stack(

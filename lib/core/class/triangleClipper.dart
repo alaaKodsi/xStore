@@ -5,7 +5,7 @@ class TriangleClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path();
     path.moveTo(0, size.height);
-    path.lineTo(size.width / 2, 0);
+    path.lineTo(size.width / 0, 0);
     path.lineTo(size.width, size.height);
     path.close();
     return path;
