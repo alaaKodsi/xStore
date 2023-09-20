@@ -1,10 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/Items/items_Controller.dart';
+import 'package:xstore/controller/favorite_controller.dart';
 import 'package:xstore/core/constant/color.dart';
-
 import 'package:xstore/core/constant/linksApi.dart';
 import 'package:xstore/data/model/itemsModel.dart';
 
@@ -65,16 +64,34 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                                   fontWeight: FontWeight.bold,
                                 )),
                             const Spacer(),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  size: 23,
-                                  color:
-                                      const Color.fromARGB(255, 235, 107, 98),
-                                  itmesModel.favorite == 1
-                                      ? Icons.favorite
-                                      : Icons.favorite_border_outlined,
-                                )),
+                            GetBuilder<Favorite_controller>(
+                              builder: (controller) => IconButton(
+                                  onPressed: () {
+                                    if (controller.isFavorite[
+                                            itmesModel.itemsId.toString()] ==
+                                        "1") {
+                                      controller.setFavorite(
+                                          itmesModel.itemsId.toString(), "0");
+                                      controller.removeData(
+                                          itmesModel.itemsId.toString());
+                                    } else {
+                                      controller.setFavorite(
+                                          itmesModel.itemsId.toString(), "1");
+                                      controller.addData(
+                                          itmesModel.itemsId.toString());
+                                    }
+                                  },
+                                  icon: Icon(
+                                    size: 23,
+                                    controller.isFavorite[itmesModel.itemsId
+                                                .toString()] ==
+                                            "1"
+                                        ? Icons.favorite
+                                        : Icons.favorite_border_outlined,
+                                    color:
+                                        const Color.fromARGB(255, 235, 107, 98),
+                                  )),
+                            ),
                           ],
                         )
                       ],

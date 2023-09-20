@@ -1,14 +1,14 @@
 import 'package:xstore/core/class/requests.dart';
 import 'package:xstore/core/constant/linksApi.dart';
 
-class ItmesData {
+class SeeAllitems {
   RequestsFromApi requestsFromApi;
 
-  ItmesData(this.requestsFromApi);
+  SeeAllitems(this.requestsFromApi);
 
-  getData(String id, String userId) async {
+  getData(String userId) async {
     var response = await requestsFromApi
-        .postData(LinkApi.itmes, {"id": id.toString(), "users_id": userId});
+        .postData(LinkApi.seeAllItems, {"users_id": userId});
 
     return response.fold((l) => l, (r) => r);
   }

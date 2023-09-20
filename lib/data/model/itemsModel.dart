@@ -1,6 +1,6 @@
 // ignore: file_names
 class ItmesModel {
-  int? itemsId;
+  String? itemsId;
   String? itemsName;
   String? itemsDesc;
   String? itemsImage;
@@ -14,7 +14,7 @@ class ItmesModel {
   String? categoriesName;
   String? categoriesImage;
   String? categoriesDateTime;
-  int? favorite;
+  String? favorite;
 
   ItmesModel(
       {this.itemsId,
@@ -34,7 +34,7 @@ class ItmesModel {
       this.favorite});
 
   ItmesModel.fromJson(Map<String, dynamic> json) {
-    itemsId = json['items_id'];
+    itemsId = json['items_id'].toString();
     itemsName = json['items_name'];
     itemsDesc = json['items_Desc'];
     itemsImage = json['items_image'];
@@ -48,7 +48,7 @@ class ItmesModel {
     categoriesName = json['categories_name'];
     categoriesImage = json['categories_Image'];
     categoriesDateTime = json['categories_dateTime'];
-    favorite = json['favorite'];
+    favorite = json['favorite'].toString();
   }
 
   Map<String, dynamic> toJson() {

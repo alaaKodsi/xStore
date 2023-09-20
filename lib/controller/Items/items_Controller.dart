@@ -16,7 +16,7 @@ abstract class ItemsController extends GetxController {
 class ItemsControllerImp extends ItemsController {
   List categories = [];
   int? selectedCat;
-  late String catId = "1";
+  String? catId;
   ItmesData itmesDate = ItmesData(Get.find());
   List data = [];
   late StatusRequest statusRequest;
@@ -33,7 +33,7 @@ class ItemsControllerImp extends ItemsController {
     categories = Get.arguments['categories'];
     selectedCat = Get.arguments['selectedCat'];
     catId = Get.arguments['catId'];
-    getItems(catId);
+    getItems(catId!);
   }
 
   @override
@@ -50,22 +50,17 @@ class ItemsControllerImp extends ItemsController {
     update();
     var response = await itmesDate.getData(
         catId, myservices.sharedPreferences.getString("id")!);
-    update();
     statusRequest = handlingData(response);
-    update();
     if (StatusRequest.success == statusRequest) {
       update();
       if (response['status'] == "success") {
         update();
         data.addAll(response['data']);
-        update();
       } else {
         statusRequest = StatusRequest.failure;
         update();
       }
-      update();
     }
-    update();
   }
 
   @override

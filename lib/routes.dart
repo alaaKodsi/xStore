@@ -2,7 +2,6 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:xstore/core/services/middelware.dart';
 import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
-import 'package:xstore/view/screen/home/homePage.dart';
 import 'package:xstore/view/screen/home/homeScreen.dart';
 import 'package:xstore/view/screen/items/itemesPage.dart';
 import 'package:xstore/view/screen/items/seeAllPage.dart';
@@ -37,10 +36,9 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/checkEmail", page: () => const CheckEmail()),
 
   /// home
-  GetPage(name: "/home", page: () => const HomePage()),
+  GetPage(name: "/home", page: () => const HomeScreen()),
   GetPage(name: "/homeRoot", page: () => const HomeScreen()),
   GetPage(name: "/itmeCat", page: () => const ItemsPage()),
   GetPage(name: "/seeAllItems", page: () => const SeeAllPage()),
-
   GetPage(name: "/productDetails", page: () => const ProductPage()),
 ];

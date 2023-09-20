@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/controller/Items/items_Controller.dart';
+import 'package:xstore/controller/favorite_controller.dart';
 import 'package:xstore/core/class/handlingData.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/data/model/itemsModel.dart';
@@ -15,6 +16,8 @@ class ItemsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp());
+    Favorite_controller controllerFavor = Get.put(Favorite_controller());
+
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: const CustomAppBar(title: "X Store"),
@@ -37,6 +40,9 @@ class ItemsPage extends StatelessWidget {
                       childAspectRatio: 0.57,
                     ),
                     itemBuilder: (context, i) {
+                      controllerFavor.isFavorite[
+                              controller.data[i]["items_id"].toString()] =
+                          controller.data[i]["favorite"].toString();
                       return CustomListItems(
                         itmesModel: ItmesModel.fromJson(controller.data[i]),
                       );

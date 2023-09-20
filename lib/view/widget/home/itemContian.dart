@@ -3,16 +3,18 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:xstore/core/constant/color.dart';
+import 'package:xstore/data/model/itemsModel.dart';
 
 class ItemContainer extends StatelessWidget {
   final String imageName;
   final String nameItem;
   final String price;
+  final ItmesModel itmesModel;
   final void Function()? onPressedIcon;
 
-  // final Double price;
   const ItemContainer({
     Key? key,
+    required this.itmesModel,
     required this.imageName,
     required this.nameItem,
     required this.price,
@@ -40,14 +42,6 @@ class ItemContainer extends StatelessWidget {
                   height: 150,
                   width: 150,
                 ),
-                Positioned(
-                    bottom: 5,
-                    right: -10,
-                    child: IconButton(
-                        color: Colors.white,
-                        iconSize: 30,
-                        onPressed: () {},
-                        icon: const Icon(Icons.favorite_border_rounded)))
               ],
             ),
           ),

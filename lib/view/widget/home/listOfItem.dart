@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:xstore/controller/Items/items_Controller.dart';
 import 'package:xstore/controller/home/home_Controller.dart';
 import 'package:xstore/core/constant/linksApi.dart';
 import 'package:xstore/data/model/itemsModel.dart';
@@ -33,7 +34,7 @@ class ListOfItem extends GetView<HomeControllerImp> {
   }
 }
 
-class Item extends StatelessWidget {
+class Item extends GetView<ItemsControllerImp> {
   final ItmesModel itmesModel;
 
   const Item({super.key, required this.itmesModel});
@@ -41,6 +42,7 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ItemContainer(
+      itmesModel: itmesModel,
       imageName: "${LinkApi.imageItems}/${itmesModel.itemsImage}",
       nameItem: "${itmesModel.itemsName}",
       price: "${itmesModel.itemsPrice}" " \$",
