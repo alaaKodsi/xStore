@@ -5,6 +5,7 @@ import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homeScreen.dart';
 import 'package:xstore/view/screen/items/itemesPage.dart';
 import 'package:xstore/view/screen/items/seeAllPage.dart';
+import 'package:xstore/view/screen/myFavorite.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
 import 'package:xstore/view/screen/product/prodcutPage.dart';
 import 'package:xstore/view/screen/splashScreen.dart';
@@ -41,4 +42,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/itmeCat", page: () => const ItemsPage()),
   GetPage(name: "/seeAllItems", page: () => const SeeAllPage()),
   GetPage(name: "/productDetails", page: () => const ProductPage()),
+  GetPage(name: "/myFavorite", page: () => const MyFavorite()),
 ];

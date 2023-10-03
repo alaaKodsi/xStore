@@ -25,7 +25,9 @@ class SeeAllPage extends StatelessWidget {
           child: Column(
             children: [
               const SearchField(),
-              GetBuilder<SeeAllitemsControllerImp>(builder: ((controller) {
+              GetBuilder<SeeAllitemsControllerImp>(builder: ((
+                controller,
+              ) {
                 return HandlingDataView(
                   statusRequest: controller.statusRequest,
                   widget: GridView.builder(

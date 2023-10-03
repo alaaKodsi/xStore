@@ -28,6 +28,7 @@ class ImageApp {
   static const String trash = "$imageRoot/trash-delete-svgrepo-com.svg";
   static const String unlock = "$imageRoot/unlock-svgrepo-com.svg";
   static const String user = "$imageRoot/user-svgrepo-com.svg";
+  static const String favorite = "$imageRoot/favorite.svg";
 
   // lotti ainmation
 

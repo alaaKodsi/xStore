@@ -21,11 +21,16 @@ class HomeScreenControllerImp extends HomeScreenController {
     ),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
+      children: [Center(child: Text("Favorite"))],
+    ),
+    Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Setting"))],
     )
   ];
 
   @override
+  // ignore: avoid_renaming_method_parameters
   changePage(int i) {
     currentpage = i;
     update();

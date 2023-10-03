@@ -1,6 +1,6 @@
 // ignore: file_names
 class LinkApi {
-  static const String root = "http://192.168.1.120/xstore";
+  static const String root = "http://192.168.1.110/xstore";
 
   //image
 
@@ -21,6 +21,7 @@ class LinkApi {
   static const String checkEmail = "$root/forgotpassword/checkEmail.Php";
 
   // home
+
   static const String home = "$root/home.Php";
   static const String itmes = "$root/items/items.Php";
   static const String seeAllItems = "$root/items/SeeAllItems.php";
@@ -29,4 +30,5 @@ class LinkApi {
 
   static const String add = "$root/Favorite/add.Php";
   static const String remove = "$root/Favorite/remove.Php";
+  static const String myFavorit = "$root/Favorite/viewMyFavorite.php";
 }

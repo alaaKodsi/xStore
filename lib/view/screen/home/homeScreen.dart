@@ -48,10 +48,17 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                   CustomButtonAppbar(
-                    icon: ImageApp.settings,
+                    icon: ImageApp.favorite,
                     activ: controller.currentpage == 3 ? true : false,
                     onPressed: () {
                       controller.changePage(3);
+                    },
+                  ),
+                  CustomButtonAppbar(
+                    icon: ImageApp.settings,
+                    activ: controller.currentpage == 4 ? true : false,
+                    onPressed: () {
+                      controller.changePage(4);
                     },
                   ),
                 ],
