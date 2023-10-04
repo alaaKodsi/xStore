@@ -38,20 +38,23 @@ class LoginControllerImp extends LoginController {
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          myservices.sharedPreferences
-              .setString('id', response['data']['users_id'].toString());
-          myservices.sharedPreferences
-              .setString('email', response['data']['users_email']);
-          myservices.sharedPreferences
-              .setString('username', response['data']['users_name']);
-          myservices.sharedPreferences
-              .setString('phone', response['data']['users_phone'].toString());
-          myservices.sharedPreferences.setBool("islogin", true);
+          if (response['data']['users_users_approv'] == "1") {
+            myservices.sharedPreferences
+                .setString('id', response['data']['users_id'].toString());
+            myservices.sharedPreferences
+                .setString('email', response['data']['users_email']);
+            myservices.sharedPreferences
+                .setString('username', response['data']['users_name']);
+            myservices.sharedPreferences
+                .setString('phone', response['data']['users_phone'].toString());
+            myservices.sharedPreferences.setBool("islogin", true);
 
-          SchedulerBinding.instance.addPostFrameCallback((_) {
-            Get.offAllNamed("home");
-          });
-          update();
+            SchedulerBinding.instance.addPostFrameCallback((_) {
+              Get.offAllNamed("home");
+            });
+          } else {
+            Get.toNamed("VerfiyCodeSignUp", arguments: {"email": email.text});
+          }
         } else {
           defaultDialog("Email or Password is Wrong Please try anain");
           statusRequest = StatusRequest.failure;

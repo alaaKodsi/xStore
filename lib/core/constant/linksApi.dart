@@ -1,6 +1,6 @@
 // ignore: file_names
 class LinkApi {
-  static const String root = "http://192.168.1.110/xstore";
+  static const String root = "http://192.168.1.102/xstore";
 
   //image
 

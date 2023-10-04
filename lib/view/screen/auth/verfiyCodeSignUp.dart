@@ -27,11 +27,12 @@ class VerfiyCodeSignUp extends StatelessWidget {
                       children: [
                         Lottie.asset(ImageApp.verifycode,
                             width: 250, height: 250),
-                        const Padding(
-                          padding: EdgeInsets.all(20),
+                        Padding(
+                          padding: const EdgeInsets.all(20),
                           child: Text(
-                            "Enter Code ",
-                            style: TextStyle(color: Colors.white, fontSize: 30),
+                            "Enter the Code from ${controller.email}",
+                            style: const TextStyle(
+                                color: Colors.white, fontSize: 30),
                           ),
                         ),
                         CustomOtpText(

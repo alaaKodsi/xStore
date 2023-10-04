@@ -13,7 +13,7 @@ abstract class MyFavoritController extends GetxController {
 MyFavoriteData myfavoriteData = MyFavoriteData(Get.find());
 late StatusRequest statusRequest;
 Myservices myservices = Get.find();
-List data = [];
+List<MyFavoriteModel> data = [];
 
 class MyFavoritControllerImp extends MyFavoritController {
   @override
@@ -30,5 +30,6 @@ class MyFavoritControllerImp extends MyFavoritController {
         statusRequest = StatusRequest.failure;
       }
     }
+    update();
   }
 }
