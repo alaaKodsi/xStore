@@ -8,16 +8,18 @@ import 'package:xstore/data/model/myFavorite.dart';
 
 abstract class MyFavoritController extends GetxController {
   getData();
+  refreshData();
 }
 
-MyFavoriteData myfavoriteData = MyFavoriteData(Get.find());
-late StatusRequest statusRequest;
-Myservices myservices = Get.find();
-List<MyFavoriteModel> data = [];
-
 class MyFavoritControllerImp extends MyFavoritController {
+  MyFavoriteData myfavoriteData = MyFavoriteData(Get.find());
+  late StatusRequest statusRequest;
+  Myservices myservices = Get.find();
+  List<MyFavoriteModel> data = [];
+
   @override
   getData() async {
+    data.clear();
     statusRequest = StatusRequest.loading;
     var response = await myfavoriteData
         .getData(myservices.sharedPreferences.getString("id")!);
@@ -31,5 +33,16 @@ class MyFavoritControllerImp extends MyFavoritController {
       }
     }
     update();
+  }
+
+  @override
+  void onInit() {
+    getData();
+    super.onInit();
+  }
+
+  @override
+  Future<void> refreshData() async {
+    await getData();
   }
 }

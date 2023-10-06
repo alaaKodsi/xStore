@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/view/screen/home/homePage.dart';
+import 'package:xstore/view/screen/myFavorite.dart';
 
 abstract class HomeScreenController extends GetxController {
   changePage(int currentpage);
@@ -19,10 +20,7 @@ class HomeScreenControllerImp extends HomeScreenController {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Cart"))],
     ),
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Favorite"))],
-    ),
+    const MyFavorite(),
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Setting"))],
