@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 import 'package:xstore/core/class/StatusRequest.dart';
@@ -7,6 +8,7 @@ import 'package:xstore/data/datasource/remotly/auth/verfiyCodeSignup.dart';
 
 abstract class VerifiySignUpController extends GetxController {
   goToLogin(String verifycodeSignUp);
+  resend();
 }
 
 VerifyCodeSignUp verifyCodeSignUp = VerifyCodeSignUp(Get.find());
@@ -39,5 +41,18 @@ class VerifiySignUpControllermp extends VerifiySignUpController {
   void onInit() {
     email = Get.arguments['email'];
     super.onInit();
+  }
+
+  @override
+  resend() {
+    Get.rawSnackbar(
+      message: 'Item Removed from Favorites',
+      duration: const Duration(seconds: 2),
+      borderRadius: 10,
+      backgroundColor: Colors.green,
+      snackPosition: SnackPosition.BOTTOM,
+      margin: const EdgeInsets.all(20),
+    );
+    // verifyCodeSignUp.resendCode(email!);
   }
 }

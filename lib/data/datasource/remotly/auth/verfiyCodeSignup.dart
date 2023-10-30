@@ -14,4 +14,11 @@ class VerifyCodeSignUp {
 
     return response.fold((l) => l, (r) => r);
   }
+
+  resendCode(String email) async {
+    var response = await requestsFromApi.postData(LinkApi.resend, {
+      "email": email,
+    });
+    return response.fold((l) => l, (r) => r);
+  }
 }

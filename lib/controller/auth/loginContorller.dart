@@ -36,9 +36,10 @@ class LoginControllerImp extends LoginController {
       update();
       var response = await loginData.postData(email.text, password.text);
       statusRequest = handlingData(response);
+      print("==================$response");
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
-          if (response['data']['users_users_approv'] == "1") {
+          if (response['data']['users_approv'] == 1) {
             myservices.sharedPreferences
                 .setString('id', response['data']['users_id'].toString());
             myservices.sharedPreferences

@@ -34,8 +34,8 @@ class SignUpControllerImp extends SignUpController {
   void onInit() {
     username = TextEditingController();
     email = TextEditingController();
-    password = TextEditingController();
     phone = TextEditingController();
+    password = TextEditingController();
     super.onInit();
   }
 

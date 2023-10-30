@@ -11,6 +11,7 @@ class LinkApi {
 
   static const String signup = "$root/auth/signup.Php";
   static const String verifyCode = "$root/auth/verifiycode.Php";
+  static const String resend = "$root/auth/resend.php";
   static const String login = "$root/auth/login.Php";
 
   //fogot password and reset password

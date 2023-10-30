@@ -1,5 +1,6 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:xstore/core/services/middelware.dart';
+import 'package:xstore/view/screen/auth/loginPage.dart';
 import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
 import 'package:xstore/view/screen/home/homeScreen.dart';
@@ -27,7 +28,7 @@ List<GetPage<dynamic>>? routes = [
 
   GetPage(
     name: "/Login",
-    page: () => const HomeScreen(),
+    page: () => const LoginPage(),
   ),
   GetPage(name: "/signUp", page: () => const SignUpPage()),
   GetPage(name: "/forgetPassword", page: () => const FotgetPasswordPage()),

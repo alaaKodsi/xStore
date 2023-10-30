@@ -29,6 +29,13 @@ class ImageApp {
   static const String unlock = "$imageRoot/unlock-svgrepo-com.svg";
   static const String user = "$imageRoot/user-svgrepo-com.svg";
   static const String favorite = "$imageRoot/favorite.svg";
+  static const String profile = "$imageRoot/profile avatar.png";
+  static const String circleEmphasis = "$imageRoot/circle-emphasis.svg";
+  static const String circleHelp = "$imageRoot/circle-help.svg";
+  static const String circleInfo = "$imageRoot/circle-info.svg";
+  static const String login = "$imageRoot/login.svg";
+  static const String logOut = "$imageRoot/logout.svg";
+  static const String squareEdit = "$imageRoot/square-edit.svg";
 
   // lotti ainmation
 
