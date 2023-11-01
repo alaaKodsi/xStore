@@ -1,9 +1,20 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/constant/imageApp.dart';
 
 class CoustomCartCard extends StatelessWidget {
-  const CoustomCartCard({super.key});
+  final String title;
+  final String subtitle;
+  final String price;
+  final String count;
+
+  const CoustomCartCard(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      required this.price,
+      required this.count});
 
   @override
   Widget build(BuildContext context) {
@@ -26,29 +37,29 @@ class CoustomCartCard extends StatelessWidget {
                       children: [
                         ListTile(
                           title: Text(
-                            "Galaxy A20 Por Max Lite 5G",
-                            style: TextStyle(
+                            title,
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold),
                           ),
                           subtitle: Text(
-                            " mobile",
-                            style: TextStyle(
+                            subtitle,
+                            style: const TextStyle(
                               color: Colors.white54,
                               fontSize: 13,
                             ),
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Padding(
-                          padding: EdgeInsets.all(15),
+                          padding: const EdgeInsets.all(15),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text(
-                                "\$299.59",
-                                style: TextStyle(
+                                "\$$price",
+                                style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 17,
                                     fontWeight: FontWeight.bold),
@@ -72,7 +83,7 @@ class CoustomCartCard extends StatelessWidget {
                                                       .resolveWith((states) =>
                                                           Colors.grey)),
                                           onPressed: () {},
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.remove,
                                             size: 20,
                                           )),
@@ -80,8 +91,8 @@ class CoustomCartCard extends StatelessWidget {
                                     Padding(
                                       padding: const EdgeInsets.all(5),
                                       child: Text(
-                                        "5",
-                                        style: TextStyle(
+                                        count,
+                                        style: const TextStyle(
                                             color: Colors.white, fontSize: 15),
                                       ),
                                     ),
@@ -96,7 +107,7 @@ class CoustomCartCard extends StatelessWidget {
                                                       .resolveWith((states) =>
                                                           Colors.grey)),
                                           onPressed: () {},
-                                          icon: Icon(
+                                          icon: const Icon(
                                             Icons.add,
                                             size: 20,
                                           )),

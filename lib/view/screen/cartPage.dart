@@ -10,12 +10,16 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(15),
+      bottomNavigationBar: const Padding(
+        padding: EdgeInsets.all(15),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            InfoPriceCart(),
+            InfoPriceCart(
+              price: "300",
+              shopping: "50",
+              total: "350",
+            ),
             CoustomElevatedButton(),
           ],
         ),
@@ -24,8 +28,12 @@ class CartPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: ListView(
-          children: [
-            CoustomCartCard(),
+          children: const [
+            CoustomCartCard(
+                title: "Galaxy A20 Por Max Lite 5G",
+                subtitle: "mobile",
+                price: "299.99",
+                count: "1"),
           ],
         ),
       ),

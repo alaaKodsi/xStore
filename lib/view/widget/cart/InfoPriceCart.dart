@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class InfoPriceCart extends StatelessWidget {
-  const InfoPriceCart({super.key});
+  final String price;
+  final String shopping;
+  final String total;
+
+  const InfoPriceCart(
+      {super.key,
+      required this.price,
+      required this.shopping,
+      required this.total});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +18,7 @@ class InfoPriceCart extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
+          const Column(
             children: [
               Text(
                 "Sub total",
@@ -21,7 +29,7 @@ class InfoPriceCart extends StatelessWidget {
                 style: TextStyle(color: Colors.white70, fontSize: 17),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.symmetric(vertical: 10),
                 child: Text(
                   "Total",
                   style: TextStyle(color: Colors.white, fontSize: 17),
@@ -32,18 +40,18 @@ class InfoPriceCart extends StatelessWidget {
           Column(
             children: [
               Text(
-                "\$300",
-                style: TextStyle(color: Colors.white70, fontSize: 17),
+                "\$$price",
+                style: const TextStyle(color: Colors.white70, fontSize: 17),
               ),
               Text(
-                "\$50",
-                style: TextStyle(color: Colors.white70, fontSize: 17),
+                "\$$shopping",
+                style: const TextStyle(color: Colors.white70, fontSize: 17),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Text(
-                  "\$350",
-                  style: TextStyle(
+                  "\$$total",
+                  style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
