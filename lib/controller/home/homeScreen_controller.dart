@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:xstore/view/screen/SettingPage.dart';
+import 'package:xstore/view/screen/cartPage.dart';
 import 'package:xstore/view/screen/home/homePage.dart';
 import 'package:xstore/view/screen/myFavorite.dart';
 
@@ -17,10 +18,7 @@ class HomeScreenControllerImp extends HomeScreenController {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [Center(child: Text("Noti"))],
     ),
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [Center(child: Text("Cart"))],
-    ),
+    const CartPage(),
     const MyFavorite(),
     const SettingPage(),
   ];

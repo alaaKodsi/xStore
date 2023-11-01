@@ -1,14 +1,14 @@
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:xstore/core/services/middelware.dart';
-import 'package:xstore/view/screen/auth/loginPage.dart';
 import 'package:xstore/view/screen/auth/signUpPage.dart';
 import 'package:xstore/view/screen/auth/verfiyCodeSignUp.dart';
+import 'package:xstore/view/screen/cartPage.dart';
 import 'package:xstore/view/screen/home/homeScreen.dart';
 import 'package:xstore/view/screen/items/itemesPage.dart';
 import 'package:xstore/view/screen/items/seeAllPage.dart';
 import 'package:xstore/view/screen/myFavorite.dart';
 import 'package:xstore/view/screen/onboardingPage.dart';
-import 'package:xstore/view/screen/product/prodcutPage.dart';
+import 'package:xstore/view/screen/prodcutPage.dart';
 import 'package:xstore/view/screen/splashScreen.dart';
 import 'view/screen/auth/checkEmail.dart';
 import 'view/screen/auth/forgetPasswordPage.dart';
@@ -28,7 +28,7 @@ List<GetPage<dynamic>>? routes = [
 
   GetPage(
     name: "/Login",
-    page: () => const LoginPage(),
+    page: () => const HomeScreen(),
   ),
   GetPage(name: "/signUp", page: () => const SignUpPage()),
   GetPage(name: "/forgetPassword", page: () => const FotgetPasswordPage()),
@@ -44,4 +44,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: "/seeAllItems", page: () => const SeeAllPage()),
   GetPage(name: "/productDetails", page: () => const ProductPage()),
   GetPage(name: "/myFavorite", page: () => const MyFavorite()),
+  GetPage(name: "/cartPage", page: () => const CartPage()),
 ];
