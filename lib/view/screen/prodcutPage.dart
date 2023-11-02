@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:xstore/controller/Product/productDetails_Controller.dart';
+import 'package:xstore/controller/productDetails_Controller.dart';
 import 'package:xstore/core/constant/color.dart';
 import 'package:xstore/core/constant/linksApi.dart';
 import 'package:xstore/view/widget/customAppbar.dart';
